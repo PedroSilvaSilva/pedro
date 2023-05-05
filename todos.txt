@@ -1,0 +1,7 @@
+// fazer setup to theme
+    https://styled-components.com/docs/faqs#note-regarding-css-import-and-createglobalstyle 
+    https://styled-components.com/docs/advanced#theming
+
+// ter 5 atomos
+
+12/05 - 15/05

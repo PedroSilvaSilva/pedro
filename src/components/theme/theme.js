@@ -1,14 +1,14 @@
 const theme = {
   colors: {
-    primary: "#375db",
+    primary: "#3754DB",
     secondary: "#fccd65",
     success: "#28a745",
     danger: "#dc3545",
     warning: "#ffc107",
     info: "#17a2b8",
     light: "#f8f9fa",
-    dark: "#343a40",
-    background: "#f0f2f5",
+    dark: "#16171d",
+    background: "#fff",
   },
   fonts: {
     body: "'Gelion', sans-serif",

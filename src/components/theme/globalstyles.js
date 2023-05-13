@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import theme from "./theme";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.cdnfonts.com/css/gelion');
@@ -29,7 +30,7 @@ ul{
 }
 main{
     display: flex;
-    gap: 40px;
+    gap: ${theme.spacing.xlarge};
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -42,15 +43,12 @@ gap: 20px;
 }
 
 .widget-container{
-    background-image: radial-gradient(
-    (circle, rgba(55, 75, 219, 1) 6%, rgba(55, 84, 219, 1) 58%)
-  );
-  
-  max-width: 680px;
-  height: auto;
-  border-radius: 25px;
-    
-}
+
+    }
+    &__image{
+        text-align: end;
+    }
+
 `;
 
 export default GlobalStyle;

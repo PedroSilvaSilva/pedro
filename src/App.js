@@ -1,10 +1,13 @@
-import "./App.css";
+import React from "react";
+import Login from "./pages/login";
+import GlobalStyle from "./components/theme/globalstyles";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <GlobalStyle />
-    </div>
+      <Login />
+    </>
   );
 }
 

@@ -41,6 +41,9 @@ main{
     h1{
         font-size: ${theme.fontSizes.small};
     }
+    .widget-login__title{
+      text-align: center;
+    }
 
     }
 
@@ -51,12 +54,17 @@ display: flex;
 flex-direction: column;
 gap: 20px;
 
-}
 
-.widget-container__title{
+
+
+}
+.widget-container{
+  &__title{
 text-align: center;
 padding-bottom: ${theme.spacing.large};
+ }
 }
+
 
 `;
 

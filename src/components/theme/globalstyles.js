@@ -34,6 +34,17 @@ main{
     justify-content: center;
     align-items: center;
     height: 100vh;
+
+    @media screen and (max-width: 960px) {
+    flex-direction: column;
+    padding: ${theme.spacing.medium};
+    h1{
+        font-size: ${theme.fontSizes.small};
+    }
+
+    }
+
+
 }
 .widget-login{
 display: flex;
@@ -42,12 +53,10 @@ gap: 20px;
 
 }
 
-.widget-container{
-
-    }
-    &__image{
-        text-align: end;
-    }
+.widget-container__title{
+text-align: center;
+padding-bottom: ${theme.spacing.large};
+}
 
 `;
 

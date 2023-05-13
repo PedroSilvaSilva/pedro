@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import theme from "../theme/theme";
 const Button = styled.button`
   background-color: ${(props) => props.theme.colors.primary};
   color: ${(props) => props.theme.colors.background};
@@ -11,6 +11,7 @@ const Button = styled.button`
   cursor: pointer;
 
   &::placeholder {
+    color: ${theme.colors.primary};
   }
 
   &:hover {

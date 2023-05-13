@@ -7,9 +7,10 @@ const Login = () => {
     <main>
       <section>
         <article className="widget-container">
-          <div>
-            <img src="https://schedulecreation.com/logo.png" alt="logo" />
-          </div>
+          <h1 className="widget-container__title">
+            Take your productivity to the next level.
+          </h1>
+          <img src="https://schedulecreation.com/logo.png" alt="logo" />
         </article>
       </section>
       <section>

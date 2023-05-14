@@ -49,13 +49,11 @@ main{
 
 
 }
+
 .widget-login{
 display: flex;
 flex-direction: column;
 gap: 20px;
-
-
-
 
 }
 .widget-container{
@@ -64,6 +62,63 @@ text-align: center;
 padding-bottom: ${theme.spacing.large};
  }
 }
+.widget-layout{
+display: flex;
+justify-content: space-between;
+}
+.widget-sidebarleft{
+  display: flex;
+  flex-direction: column;
+  
+  
+  border-radius: 0px 15px 15px 0px;
+  border: 2px solid blue;
+
+  width: 280px;
+  height: 100vh;
+}
+.widget-sidebar{
+ 
+  display: flex;
+  flex-direction: column;
+  
+  
+  border-radius: 0px 15px 15px 0px;
+  border: 2px solid blue;
+
+  width: 280px;
+  height: 100vh;
+
+  &__logo{
+    text-align: center;
+  }
+  &__menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+   
+  }
+  &__menulist{
+       gap: 50px;
+    display: flex;
+    flex-direction: column;
+
+  }
+  &__user{
+    width: 25%;
+  }
+}
+.test1{
+  display: flex;
+  
+
+
+
+}
+
 
 
 `;

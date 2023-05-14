@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../button/button";
 
 const Sidebar = () => {
   return (
@@ -6,6 +7,8 @@ const Sidebar = () => {
       <div className="widget-sidebar">
         <div className="widget-sidebar__logo">
           <img src="https://schedulecreation.com/logo.png" alt="logo" />
+          <h1>Dashboard</h1>
+          <p>WorkSpace</p>
         </div>
         <div className="widget-sidebar__menu">
           <ul className="widget-sidebar__menulist">
@@ -17,7 +20,7 @@ const Sidebar = () => {
             <li>Settings</li>
           </ul>
         </div>
-        <button>Log Out</button>
+        <Button>Log Out</Button>
       </div>
       <div>
         <button>

@@ -4,7 +4,7 @@ import theme from "./theme";
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.cdnfonts.com/css/gelion');
  * {
-    
+  
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
   body{
     max-width: 1920px;
     margin: 0 auto;
+    
   }
   h1,h2,h3,h4,h5,h6,p{
     font-family: 'Gelion', sans-serif;
@@ -46,8 +47,6 @@ main{
     }
 
     }
-
-
 }
 
 .widget-login{
@@ -65,13 +64,14 @@ padding-bottom: ${theme.spacing.large};
 .widget-layout{
 display: flex;
 justify-content: space-between;
+background-color: ${theme.colors.bg};
 }
 .widget-sidebarleft{
+  background-color: ${theme.colors.background};
   display: flex;
   flex-direction: column;
   border-radius: 15px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-  
   width: 380px;
   margin: 20px 10px 20px 10px;
   height: 95vh;
@@ -111,6 +111,8 @@ justify-content: space-between;
 }
 abbr[title] {
  text-decoration: none;
+ font-size: 8px;
+ font-family: 'Gelion', sans-serif;
 }
 
 .react-calendar__tile:enabled:hover,
@@ -172,19 +174,16 @@ abbr[title] {
  color: white;
 }
 .widget-sidebar{
- 
+  
+  background-color: ${theme.colors.background};
   display: flex;
   flex-direction: column;
-  
-  
   border-radius: 0px 15px 15px 0px;
-  border: 2px solid blue;
-
   width: 280px;
   height: 100vh;
-
   &__logo{
     text-align: center;
+    margin: 15px;
   }
   &__menu{
     display: flex;
@@ -193,10 +192,9 @@ abbr[title] {
     align-items: center;
     height: 100vh;
 
-   
   }
   &__menulist{
-       gap: 50px;
+    gap: 50px;
     display: flex;
     flex-direction: column;
 
@@ -209,6 +207,21 @@ abbr[title] {
   display: flex;
 }
 
+.widget-card{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.widget-container{
+ 
+  &__list{
+    display: flex;
+    justify-content: center;
+    gap: 56px;
+    align-items: center;
+    margin: 30px;
+  
+  }
+}
 
 
 `;

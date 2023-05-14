@@ -5,7 +5,7 @@ import Inputs from "../components/inputs/inputs";
 const Login = () => {
   return (
     <body>
-      <main>
+      <main className="container">
         <section>
           <article className="widget-container">
             <h1 className="widget-container__title">

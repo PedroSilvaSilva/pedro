@@ -24,13 +24,21 @@ const GlobalStyle = createGlobalStyle`
 
   }
 ul{
+  font-family: 'Gelion', sans-serif;
     list-style: none;
     margin: 0;
     padding: 0;
+    color:${theme.colors.primary};
     
 }
-main{
-    display: flex;
+a{
+  color:${theme.colors.primary};
+  text-decoration: none;
+  font-family: 'Gelion', sans-serif;
+}
+
+.container{
+  display: flex;
     gap: ${theme.spacing.xlarge};
     justify-content: center;
     align-items: center;
@@ -47,6 +55,11 @@ main{
     }
 
     }
+}
+main{
+    gap: ${theme.spacing.xlarge};
+    height: 100vh;
+
 }
 
 .widget-login{
@@ -209,10 +222,15 @@ abbr[title] {
 
 .widget-card{
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 450px;
+  border-radius: 10px;
+  border: 1px solid blue;
 }
 
 .widget-container{
- 
+   width: 100%;
+   max-height: 100vh;
+   margin: 23px;
   &__list{
     display: flex;
     justify-content: center;
@@ -220,6 +238,18 @@ abbr[title] {
     align-items: center;
     margin: 30px;
   
+  }
+  &__search{
+    width: 320px;
+   
+  
+  }
+  &__btnc{
+    text-align: end;
+  }
+  &__description{
+   
+
   }
 }
 

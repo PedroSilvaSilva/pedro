@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../header/header";
+import ButtonMore from "../button/buttonmore";
 
 const Card = () => {
   return (
@@ -8,17 +9,15 @@ const Card = () => {
         <section>
           <div className="widget-card">
             <div className="widget-card__header">
-              <img src="https://schedulecreation.com/code.png" alt="Task" />
+              <h1>Titlo da Task</h1>
               <h3>Taks by Name </h3>
             </div>
             <p className="widget-card__description">
-              Et gravida sit at faucibus nulla dolor enim pretium ac. Tincidunt
-              egestas et purus malesuada nec facilisi purus. Venenatis libero
-              fringilla dictum eu tellus egestas mi.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quis
+              iure corrupti esse! Maiores maxime saepe ex ipsa itaque, at
+              dolorum! Sint fugit ea eius nostrum in. Nobis, vero sequi.
             </p>
-            <a href="" class="btn btn--inverted" title="">
-              Saiba Mais
-            </a>
+            <ButtonMore>View Task</ButtonMore>
           </div>
         </section>
       </main>

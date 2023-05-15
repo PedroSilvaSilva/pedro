@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../button/button";
+import ButtonLoguot from "../button/buttonloguot";
 
 const Sidebar = () => {
   return (
@@ -20,10 +20,10 @@ const Sidebar = () => {
             <li>Settings</li>
           </ul>
         </div>
-        <Button>Log Out</Button>
+        <ButtonLoguot>Logout</ButtonLoguot>
       </div>
       <div>
-        <button>
+        {/* <button>
           <svg
             width="27"
             height="24"
@@ -36,7 +36,7 @@ const Sidebar = () => {
               fill="white"
             />
           </svg>
-        </button>
+        </button> */}
       </div>
     </header>
   );

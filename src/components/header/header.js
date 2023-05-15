@@ -7,16 +7,23 @@ const Header = () => {
   return (
     <div className="widget-container">
       <div>
-        <form action="" className="widget-container__search">
-          <Inputs
-            type="pesquisa"
-            name="pesquisa"
-            placeholder="Search your Tasks here..."
+        <div className="widget-container__form">
+          <form action="" className="widget-container__search">
+            <Inputs
+              type="pesquisa"
+              name="pesquisa"
+              placeholder="Search your Tasks here..."
+            />
+          </form>
+          <img
+            className="widget-container__imag1"
+            src="https://schedulecreation.com/notificacao.png"
+            alt="logo"
           />
-        </form>
+        </div>
+
         <div className="widget-container__description">
-          <p>sinal aviso</p>
-          <h1>Tasks Nome do que for select</h1>
+          <h1>Tasks.....</h1>
           <p>Tuas tasks são as seguintes </p>
         </div>
         <div className="widget-container__btnc">
@@ -28,22 +35,22 @@ const Header = () => {
         <ul className="widget-container__list">
           <li>
             <a href="#" title="">
-              All Tasks
+              All Tasks 1
             </a>
           </li>
           <li>
             <a href="#" title="">
-              Pending
+              Pending 2
             </a>
           </li>
           <li>
             <a href="#" title="">
-              In Progress
+              In Progress 3
             </a>
           </li>
           <li>
             <a href="#" title="">
-              Completed
+              Completed 4
             </a>
           </li>
         </ul>

@@ -191,7 +191,7 @@ abbr[title] {
   background-color: ${theme.colors.background};
   display: flex;
   flex-direction: column;
-  border-radius: 0px 15px 15px 0px;
+  
   width: 280px;
   height: 100vh;
   &__logo{
@@ -221,13 +221,22 @@ abbr[title] {
 }
 
 .widget-card{
+  background-color: ${theme.colors.background};
+  margin-top: 25px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  width: 450px;
+  width: 300px;
+  height: auto;
   border-radius: 10px;
-  border: 1px solid blue;
+  border: 2px solid transparent;
+
+  &__description,p,h1{
+  text-align: center;
+}
 }
 
+
 .widget-container{
+  
    width: 100%;
    max-height: 100vh;
    margin: 23px;
@@ -251,8 +260,18 @@ abbr[title] {
    
 
   }
+  &__imag1{
+  width: 30px;
+  }
+  &__form{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
 }
-
+.widget-container__head{
+  border-bottom:3px solid white;
+}
 
 `;
 

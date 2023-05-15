@@ -7,9 +7,9 @@ const Creataccount = () => {
     <body>
       <main>
         <section>
-          <img src="https://schedulecreation.com/logo.png" alt="logo" />
-          <article className="widget-login">
-            <h2 className="widget-login__title">Creat Account </h2>
+          <article className="widget-login-account">
+            <img src="https://schedulecreation.com/logo.png" alt="logo" />
+            <h2 className="widget-login-account__title">Creat Account </h2>
             <form action="">
               <Inputs type="name" name="uname" placeholder="Name" />
               <Inputs type="Email" name="Email" placeholder="Email" />

@@ -61,7 +61,14 @@ main{
     height: 100vh;
 
 }
-
+.widget-login-account{
+  display: flex;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+width: 100%;
+height: 100vh;
+}
 .widget-login{
 display: flex;
 flex-direction: column;
@@ -235,7 +242,7 @@ abbr[title] {
 }
 
 
-.widget-container{
+.widget-container-Head{
   
    width: 100%;
    max-height: 100vh;

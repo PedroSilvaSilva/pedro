@@ -5,10 +5,10 @@ import Card from "../card/card";
 
 const Header = () => {
   return (
-    <div className="widget-container">
+    <div className="widget-container-Head">
       <div>
-        <div className="widget-container__form">
-          <form action="" className="widget-container__search">
+        <div className="widget-container-Head__form">
+          <form action="" className="widget-container-Head__search">
             <Inputs
               type="pesquisa"
               name="pesquisa"
@@ -16,23 +16,23 @@ const Header = () => {
             />
           </form>
           <img
-            className="widget-container__imag1"
+            className="widget-container-Head__imag1"
             src="https://schedulecreation.com/notificacao.png"
             alt="logo"
           />
         </div>
 
-        <div className="widget-container__description">
+        <div className="widget-container-Head__description">
           <h1>Tasks.....</h1>
           <p> Aqui ...... </p>
         </div>
-        <div className="widget-container__btnc">
+        <div className="widget-container-Head__btnc">
           <Button>Creat New Task</Button>
         </div>
       </div>
 
-      <nav className="widget-container__head">
-        <ul className="widget-container__list">
+      <nav className="widget-container-Head__head">
+        <ul className="widget-container-Head__list">
           <li>
             <a href="#" title="">
               All Tasks 1

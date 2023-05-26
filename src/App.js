@@ -18,7 +18,9 @@ import Welcome from "./organisms/welcome/welcome";
 const App = () => {
   return (
     <>
-      <div></div>
+      <div>
+        <button></button>
+      </div>
       <Provider store={store}>
         <Router>
           <GlobalStyle />

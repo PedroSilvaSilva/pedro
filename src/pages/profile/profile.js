@@ -1,10 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
+import Button from "../../components/button/button";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate("/login");
+  };
+
+  const handleLogoutConfirmation = () => {
+    setShowConfirmation(true);
+  };
+
+  const handleCancelLogout = () => {
+    setShowConfirmation(false);
+  };
+
   return (
     <>
       <div>
         <p>Settings</p>
+
+        <div>
+          {showConfirmation ? (
+            <div>
+              <p>Are you sure you want to logout?</p>
+              <Button onClick={handleLogout}>Yes, Logout</Button>
+              <Button onClick={handleCancelLogout}>Cancel</Button>
+            </div>
+          ) : (
+            <Button onClick={handleLogoutConfirmation}>Logout</Button>
+          )}
+        </div>
       </div>
     </>
   );

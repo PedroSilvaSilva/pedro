@@ -30,11 +30,13 @@ ul{
     padding: 0;
     color:${theme.colors.primary};
     
+    
 }
 a{
   color:${theme.colors.primary};
   text-decoration: none;
   font-family: 'Gelion', sans-serif;
+  text-transform: uppercase;
 }
 
 .container{
@@ -55,6 +57,14 @@ a{
     }
 
     }
+}
+
+#light {
+    background-color: #222;
+}
+
+#dark {
+    background-color: #6f48eb33;
 }
 
 /* .widget-login-account{

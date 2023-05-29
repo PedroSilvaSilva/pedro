@@ -17,6 +17,7 @@ import Welcome from "./organisms/welcome/welcome";
 import Task from "./pages/task";
 import Overview from "./pages/overview";
 import ReactSwitch from "react-switch";
+
 export const ThemeContext = createContext(null);
 
 const App = () => {
@@ -35,7 +36,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Navigate to="/login" />} />
               <Route path="/terms" element={<TermsAndConditions />} />
-              <Route path="/dashboard" element={<Layout />} />
+              <Route exact path="/dashboard" element={<Layout />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/task" element={<Task />} />
               <Route path="/overview" element={<Overview />} />
@@ -44,7 +45,7 @@ const App = () => {
               <Route path="/createaccount" element={<Createaccount />} />
             </Routes>
           </ThemeContext.Provider>
-          <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} />
+          {/* <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} /> */}
         </Router>
       </Provider>
     </div>

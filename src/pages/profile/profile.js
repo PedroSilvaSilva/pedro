@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "../../components/button/button";
 import { useNavigate } from "react-router-dom";
+import Sidebar from "../../organisms/sidebar/sidebar";
 
 const Profile = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -21,6 +22,7 @@ const Profile = () => {
   return (
     <>
       <div>
+        <Sidebar />
         <p>Settings</p>
 
         <div>

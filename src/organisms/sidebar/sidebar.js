@@ -1,42 +1,37 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { ContainerHeader, ContainerBar, ContainerLogo } from "./sidebar.style";
-import { AiFillBulb, AiFillSetting } from "react-icons/ai";
-import { FaTasks } from "react-icons/fa";
-import { RxDashboard } from "react-icons/rx";
-// import { GiHamburgerMenu } from "react-icons/gi";
-import { VscWorkspaceTrusted } from "react-icons/vsc";
+import { Sidebardata } from "./sidebardata";
+import { ContainerBar, ContainerHeader, ContainerLogo } from "./sidebar.style";
+import Button from "../../components/button/button";
 
 const Sidebar = () => {
   return (
-    <ContainerHeader>
-      <img src="https://schedulecreation.com/logo.png" alt="logo" />
-
-      <ContainerLogo>
-        <h1>
-          <RxDashboard />
-          Dashboard
-        </h1>
-        <h2>
-          <VscWorkspaceTrusted /> WorkSpace
-        </h2>
-      </ContainerLogo>
-
+    <>
       <ContainerBar>
-        <Link to="/overview">
-          <AiFillBulb />
-          Overview
-        </Link>
-        <Link to="/task">
-          <FaTasks />
-          Tasks
-        </Link>
-        <Link to="/profile">
-          <AiFillSetting />
-          Profile
-        </Link>
+        <img src="https://schedulecreation.com/logo.png" alt="Logo" />
+
+        {Sidebardata.map((val, key) => {
+          return (
+            <ContainerHeader>
+              <ContainerLogo
+                key={key}
+                id={window.location.pathname === val.link ? "active" : ""}
+                onClick={() => {
+                  window.location.pathname = val.link;
+                }}
+              >
+                <div id="icon">
+                  <h2>{val.icon}</h2>
+                </div>
+                <div id="title">
+                  <h2>{val.title}</h2>
+                </div>
+              </ContainerLogo>
+            </ContainerHeader>
+          );
+        })}
+        <Button>Log Out</Button>
       </ContainerBar>
-    </ContainerHeader>
+    </>
   );
 };
 

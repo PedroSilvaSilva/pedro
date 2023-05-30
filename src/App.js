@@ -14,7 +14,7 @@ import TermsAndConditions from "./organisms/terms/terms";
 import Profile from "./pages/profile/profile";
 import Createaccount from "./pages/createaccount/createaccount";
 import Welcome from "./organisms/welcome/welcome";
-import Task from "./pages/task";
+import Task from "./pages/task/task";
 import Overview from "./pages/overview";
 import ReactSwitch from "react-switch";
 

@@ -3,6 +3,7 @@ import { Container } from "./welcome.style";
 import Button from "../../components/button/button";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
+import { user } from "../data/datauser";
 const Welcome = () => {
   const navigate = useNavigate();
 
@@ -13,9 +14,15 @@ const Welcome = () => {
   return (
     <Container>
       <img src={logo} alt="Logo" />
-      <h2>Welcome :) </h2>
+      {user.map((val) => {
+        return (
+          <div>
+            <h2>Welcome Back {val.name} </h2>
+          </div>
+        );
+      })}
 
-      <Button onClick={handleGetStarted}> Get Started </Button>
+      <Button onClick={handleGetStarted}> Go Work </Button>
     </Container>
   );
 };

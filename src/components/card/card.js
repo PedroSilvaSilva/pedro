@@ -1,21 +1,22 @@
 import React from "react";
-
+import { task } from "../../organisms/data/datatask";
+import { ContainerCard } from "./card.style";
 const Card = () => {
   return (
     <body>
       <main>
         <section>
-          <div className="widget-card">
-            <div className="widget-card__header">
-              <h1>Titlo da Task</h1>
-              <h3>Taks by Name </h3>
-            </div>
-            <p className="widget-card__description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quis
-              iure corrupti esse! Maiores maxime saepe ex ipsa itaque, at
-              dolorum! Sint fugit ea eius nostrum in. Nobis, vero sequi.
-            </p>
-          </div>
+          {task.map((val) => {
+            return (
+              <ContainerCard>
+                <ul>
+                  <li>Id: {val.key}</li>
+                  <li>Creator: {val.creator}</li>
+                  <li>Department: {val.departament}</li>
+                </ul>
+              </ContainerCard>
+            );
+          })}
         </section>
       </main>
     </body>

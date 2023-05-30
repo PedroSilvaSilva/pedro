@@ -12,4 +12,9 @@ const Container = styled.div`
   display: flex;
 `;
 
-export { WidgetLayout, Container };
+const ContainerMain = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px));
+`;
+
+export { WidgetLayout, Container, ContainerMain };

@@ -1,22 +1,37 @@
 import React from "react";
+import { user } from "../data/datauser";
 import { Sidebardata } from "./sidebardata";
-import { ContainerBar, ContainerHeader, ContainerLogo } from "./sidebar.style";
+import {
+  ContainerBar,
+  ContainerHeader,
+  ContainerLogo,
+  ContainerUSer,
+} from "./sidebar.style";
+
+import logo from "../../assets/images/logo.png";
 
 const Sidebar = () => {
   return (
     <>
       <ContainerBar>
-        <img src="https://schedulecreation.com/logo.png" alt="Logo" />
+        <img src={logo} alt="Logo" />
 
-        <div>
-          <img
-            className="widget-sidebarleft__user"
-            src="https://schedulecreation.com/user.png"
-            alt="user"
-          />
-          <p>Nome de User</p>
-          <p>Email</p>
-        </div>
+        <ContainerUSer>
+          {user.map((val) => {
+            return (
+              <div>
+                <h2>{val.image.src}</h2>
+                <h2>
+                  {val.icon} {val.name}
+                </h2>
+                <h2>
+                  {val.icon2}
+                  {val.job}
+                </h2>
+              </div>
+            );
+          })}
+        </ContainerUSer>
 
         {Sidebardata.map((val, key) => {
           return (

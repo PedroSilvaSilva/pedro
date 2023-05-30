@@ -38,4 +38,13 @@ const ContainerLogo = styled.li`
   }
 `;
 
-export { ContainerBar, ContainerHeader, ContainerLogo };
+const ContainerUSer = styled.div`
+  border: 1px solid blue;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export { ContainerBar, ContainerHeader, ContainerLogo, ContainerUSer };

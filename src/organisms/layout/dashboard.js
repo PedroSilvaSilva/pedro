@@ -1,17 +1,18 @@
 import React from "react";
 import Sidebar from "../sidebar/sidebar";
-
-import { WidgetLayout, Container } from "./dashboard.style";
 import Header from "../header/header";
+import { WidgetLayout, Container, ContainerMain } from "./dashboard.style";
 
 const Layout = () => {
   return (
-    <Container>
-      <Sidebar />
-      <WidgetLayout>
-        <Header />
-      </WidgetLayout>
-    </Container>
+    <ContainerMain>
+      <Container>
+        <Sidebar />
+        <WidgetLayout>
+          <Header />
+        </WidgetLayout>
+      </Container>
+    </ContainerMain>
   );
 };
 

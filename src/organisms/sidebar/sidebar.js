@@ -1,13 +1,22 @@
 import React from "react";
 import { Sidebardata } from "./sidebardata";
 import { ContainerBar, ContainerHeader, ContainerLogo } from "./sidebar.style";
-import Button from "../../components/button/button";
 
 const Sidebar = () => {
   return (
     <>
       <ContainerBar>
         <img src="https://schedulecreation.com/logo.png" alt="Logo" />
+
+        <div>
+          <img
+            className="widget-sidebarleft__user"
+            src="https://schedulecreation.com/user.png"
+            alt="user"
+          />
+          <p>Nome de User</p>
+          <p>Email</p>
+        </div>
 
         {Sidebardata.map((val, key) => {
           return (
@@ -29,7 +38,6 @@ const Sidebar = () => {
             </ContainerHeader>
           );
         })}
-        <Button>Log Out</Button>
       </ContainerBar>
     </>
   );

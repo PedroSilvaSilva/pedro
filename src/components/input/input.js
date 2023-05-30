@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import theme from "../../theme/theme";
+
 const Input = styled.input`
   border: none;
   font-size: 16px;

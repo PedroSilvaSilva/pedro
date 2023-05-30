@@ -60,11 +60,11 @@ a{
 }
 
 #light {
-    background-color: #222;
+    background-color: #f2f4f1;
 }
 
 #dark {
-    background-color: #6f48eb33;
+    background-color: #f2f4f1;
 }
 
 /* .widget-login-account{

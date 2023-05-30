@@ -5,7 +5,8 @@ import axios from "axios";
 import Button from "../../components/button/button";
 import Input from "../../components/input/input";
 import { loginSuccess, loginFailure } from "../../organisms/redux/loginreducer";
-import { ContainerLogin, WidgetLogin } from "./login.style";
+import { ContainerImg, ContainerLogin } from "./login.style";
+import logo from "../../assets/images/logo.png";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -34,13 +35,15 @@ const Login = () => {
         {
           email,
           password,
+          returnSecureToken: true,
         }
       )
       .then((response) => {
         setEmail("");
         setPassword("");
         dispatch(loginSuccess());
-        navigate("/terms");
+
+        navigate("/welcome");
       })
       .catch((error) => {
         dispatch(
@@ -48,20 +51,22 @@ const Login = () => {
             "An error occurred while logging in. Please check your credentials."
           )
         );
+
         console.error(error);
       });
   };
 
   return (
     <>
-      <ContainerLogin>
-        <WidgetLogin>
-          <div>
+      <section>
+        <ContainerLogin>
+          <ContainerImg>
             <h2>Take your productivity to the next level.</h2>
-            <img src="https://schedulecreation.com/logo.png" alt="logo" />
-          </div>
-          <article>
+            <img src={logo} alt="Logo" />
+          </ContainerImg>
+          <div>
             <h2>Login</h2>
+            <br />
             <form onSubmit={handleLogin}>
               <Input
                 type="email"
@@ -79,11 +84,14 @@ const Login = () => {
               />
               {error && <p>{error}</p>}
               <Button type="submit">Login</Button>
-              <Button onClick={handleCreateAccount}>Create Account</Button>
             </form>
-          </article>
-        </WidgetLogin>
-      </ContainerLogin>
+            <p>
+              <br />
+              <Button onClick={handleCreateAccount}>Create Account</Button>
+            </p>
+          </div>
+        </ContainerLogin>
+      </section>
     </>
   );
 };

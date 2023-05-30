@@ -1,6 +1,4 @@
 import React from "react";
-import Header from "../header/header";
-import ButtonMore from "../button/buttonmore";
 
 const Card = () => {
   return (
@@ -17,7 +15,6 @@ const Card = () => {
               iure corrupti esse! Maiores maxime saepe ex ipsa itaque, at
               dolorum! Sint fugit ea eius nostrum in. Nobis, vero sequi.
             </p>
-            <ButtonMore>View Task</ButtonMore>
           </div>
         </section>
       </main>

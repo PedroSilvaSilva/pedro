@@ -3,7 +3,8 @@ import { styled } from "styled-components";
 const ContainerBar = styled.div`
   height: 100vh;
   width: 250px;
-  background-color: #2f4050;
+  background-color: white;
+  padding: 16px;
 `;
 
 const ContainerHeader = styled.ul`
@@ -18,7 +19,7 @@ const ContainerLogo = styled.li`
   margin: 0%;
   display: flex;
   flex-direction: row;
-  color: white;
+  color: black;
   justify-content: center;
   align-items: center;
   #icon {

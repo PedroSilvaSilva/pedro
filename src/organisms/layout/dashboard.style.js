@@ -3,9 +3,13 @@ import { styled } from "styled-components";
 import theme from "../../theme/theme";
 
 const WidgetLayout = styled.div`
-  /* display: flex;
+  display: flex;
   justify-content: space-between;
-  background-color: ${theme.colors.bg}; */
+  background-color: ${theme.colors.bg};
 `;
 
-export { WidgetLayout };
+const Container = styled.div`
+  display: flex;
+`;
+
+export { WidgetLayout, Container };

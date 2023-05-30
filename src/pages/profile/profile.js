@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Button from "../../components/button/button";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../../organisms/sidebar/sidebar";
-
+import Card from "../../components/card/card";
+import { ContainerPro } from "./profile.style";
 const Profile = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const Profile = () => {
 
   return (
     <>
-      <div>
+      <ContainerPro>
         <Sidebar />
         <p>Settings</p>
 
@@ -36,7 +37,7 @@ const Profile = () => {
             <Button onClick={handleLogoutConfirmation}>Logout</Button>
           )}
         </div>
-      </div>
+      </ContainerPro>
     </>
   );
 };

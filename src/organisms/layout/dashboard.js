@@ -1,17 +1,17 @@
 import React from "react";
 import Sidebar from "../sidebar/sidebar";
-import SidebarLeft from "../sidebar/sidebarleft";
+
+import { WidgetLayout, Container } from "./dashboard.style";
 import Header from "../header/header";
-import { WidgetLayout } from "./dashboard.style";
 
 const Layout = () => {
   return (
-    <WidgetLayout>
+    <Container>
       <Sidebar />
-      {/* <Header /> */}
-
-      {/* <SidebarLeft /> */}
-    </WidgetLayout>
+      <WidgetLayout>
+        <Header />
+      </WidgetLayout>
+    </Container>
   );
 };
 

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Button from "../../components/button/button";
 import { useNavigate } from "react-router-dom";
+import { user } from "../../organisms/data/datauser";
 import Sidebar from "../../organisms/sidebar/sidebar";
-import Card from "../../components/card/card";
 import { ContainerPro, ContainerUser } from "./profile.style";
 import Input from "../../components/input/input";
-import { user } from "../../organisms/data/datauser";
-import { AiOutlineSearch } from "react-icons/ai";
+import { SidebarCalendar } from "../../organisms/sidebar/sidebarcalendar";
+import logo from "../../assets/images/logo.png";
 const Profile = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
@@ -63,22 +63,40 @@ const Profile = () => {
                     <Button>Edit </Button>
                   </ContainerUser>
                   <Button>Edit Profile</Button>
-                  {showConfirmation ? (
-                    <div>
-                      <p>Are you sure you want to logout?</p>
-                      <br />
-                      <Button onClick={handleLogout}>Yes, Logout</Button>
-                      <br />
-
-                      <Button onClick={handleCancelLogout}>Cancel</Button>
-                    </div>
-                  ) : (
-                    <Button onClick={handleLogoutConfirmation}>Logout</Button>
-                  )}
                 </div>
               );
             })}
           </div>
+        </div>
+        <div>
+          {showConfirmation ? (
+            <div>
+              <p>Are you sure you want to logout?</p>
+              <br />
+              <Button onClick={handleLogout}>Yes, Logout</Button>
+              <br />
+
+              <Button onClick={handleCancelLogout}>Cancel</Button>
+            </div>
+          ) : (
+            <Button onClick={handleLogoutConfirmation}>Logout</Button>
+          )}
+          {user.map((val) => {
+            return (
+              <div>
+                <img src={logo} alt="" />
+                <h2>Perfil</h2>
+                <h2>
+                  {val.icon} {val.name}
+                </h2>
+                <h2>
+                  {val.icon2}
+                  {val.job}
+                </h2>
+              </div>
+            );
+          })}
+          <SidebarCalendar />
         </div>
       </ContainerPro>
     </>

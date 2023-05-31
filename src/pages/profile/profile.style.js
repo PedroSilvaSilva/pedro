@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 const ContainerPro = styled.div`
   display: grid;
   grid-template-columns: 350px auto 350px;
+  margin: 0 auto;
 `;
 
 const ContainerUser = styled.div`

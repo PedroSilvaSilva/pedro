@@ -23,7 +23,7 @@ export const Sidebardata = [
     link: "/task",
   },
   {
-    title: "Settings",
+    title: "Profile",
     icon: <ImProfile />,
     link: "/profile",
   },

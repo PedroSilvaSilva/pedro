@@ -1,5 +1,5 @@
 import React from "react";
-import { user } from "../data/datauser";
+
 import { Sidebardata } from "./sidebardata";
 import {
   ContainerBar,
@@ -7,7 +7,6 @@ import {
   ContainerLogo,
   ContainerUSer,
 } from "./sidebar.style";
-
 import logo from "../../assets/images/logo.png";
 
 const Sidebar = () => {
@@ -16,22 +15,7 @@ const Sidebar = () => {
       <ContainerBar>
         <img src={logo} alt="Logo" />
 
-        <ContainerUSer>
-          {user.map((val) => {
-            return (
-              <div>
-                <h2>{val.image.src}</h2>
-                <h2>
-                  {val.icon} {val.name}
-                </h2>
-                <h2>
-                  {val.icon2}
-                  {val.job}
-                </h2>
-              </div>
-            );
-          })}
-        </ContainerUSer>
+        <ContainerUSer></ContainerUSer>
 
         {Sidebardata.map((val, key) => {
           return (

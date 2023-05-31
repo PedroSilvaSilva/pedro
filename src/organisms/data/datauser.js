@@ -8,7 +8,6 @@ export const user = [
     email: "carretas90@gmail.com",
     icon3: <FaUserAlt />,
     password: "******",
-
     job: "Web Dev",
     icon2: <MdOutlineDeveloperMode />,
     image: {

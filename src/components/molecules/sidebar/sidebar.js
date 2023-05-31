@@ -7,7 +7,7 @@ import {
   ContainerLogo,
   ContainerUSer,
 } from "./sidebar.style";
-import logo from "../../assets/images/logo.png";
+import logo from "../../../assets/images/logo.png";
 
 const Sidebar = () => {
   return (

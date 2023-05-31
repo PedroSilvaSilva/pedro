@@ -1,6 +1,6 @@
 import React from "react";
-import Sidebar from "../sidebar/sidebar";
-import Header from "../header/header";
+import Sidebar from "../../molecules/sidebar/sidebar";
+import Header from "../../../organisms/header/header";
 import { WidgetLayout, Container, ContainerMain } from "./dashboard.style";
 
 const Layout = () => {

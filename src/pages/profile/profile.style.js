@@ -2,8 +2,7 @@ import { styled } from "styled-components";
 
 const ContainerPro = styled.div`
   display: grid;
-  grid-template-columns: 350px auto 350px;
-  margin: 0 auto;
+  grid-template-columns: 260px auto 380px;
 `;
 
 const ContainerUser = styled.div`
@@ -12,8 +11,8 @@ const ContainerUser = styled.div`
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   border-radius: 15px;
   text-align: center;
-  width: 800px;
-  padding: 15px;
+  width: 100%;
+  padding: 16px;
 `;
 
 export { ContainerPro, ContainerUser };

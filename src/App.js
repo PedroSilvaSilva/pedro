@@ -5,11 +5,11 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import Login from "./pages/login/login";
-import GlobalStyle from "./theme/globalstyles";
+import Login from "./components/molecules/login/login";
+import GlobalStyle from "./components/templates/theme/globalstyles";
 import { Provider } from "react-redux";
-import store from "./organisms/redux/store";
-import Layout from "./organisms/layout/dashboard";
+import store from "./components/molecules/redux/store";
+import Layout from "./components/templates/layout/dashboard";
 import TermsAndConditions from "./organisms/terms/terms";
 import Profile from "./pages/profile/profile";
 import Createaccount from "./pages/createaccount/createaccount";

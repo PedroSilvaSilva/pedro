@@ -1,6 +1,7 @@
 import React from "react";
-import { task } from "../../organisms/data/datatask";
+import { task } from "../../../organisms/data/datatask";
 import { ContainerCard } from "./card.style";
+
 const Card = () => {
   return (
     <body>

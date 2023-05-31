@@ -1,5 +1,5 @@
-import Button from "../../components/button/button";
-import Input from "../../components/input/input";
+import Button from "../../components/atoms/button/button";
+import Input from "../../components/atoms/input/input";
 import axios from "axios";
 import React, { useState } from "react";
 import logo from "../../assets/images/logo.png";

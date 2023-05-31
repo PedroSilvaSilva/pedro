@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "../../components/button/button";
-import Inputs from "../../components/input/input";
+import Button from "../../components/atoms/button/button";
+import Inputs from "../../components/atoms/input/input";
 
 const Header = () => {
   return (

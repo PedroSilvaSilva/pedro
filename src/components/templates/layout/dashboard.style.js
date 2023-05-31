@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-import theme from "../../theme/theme";
+import theme from "../../templates/theme/theme";
 
 const WidgetLayout = styled.div`
   display: flex;

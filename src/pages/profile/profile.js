@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import Button from "../../components/button/button";
+import Button from "../../components/atoms/button/button";
 import { useNavigate } from "react-router-dom";
 import { user } from "../../organisms/data/datauser";
-import Sidebar from "../../organisms/sidebar/sidebar";
+import Sidebar from "../../components/molecules/sidebar/sidebar";
 import { ContainerPro, ContainerUser } from "./profile.style";
-import Input from "../../components/input/input";
-import { SidebarCalendar } from "../../organisms/sidebar/sidebarcalendar";
+import Input from "../../components/atoms/input/input";
+import { SidebarCalendar } from "../../components/molecules/sidebar/sidebarcalendar";
 import logo from "../../assets/images/logo.png";
+
 const Profile = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ const Profile = () => {
         <Sidebar />
         <div>
           <form action="" id="">
-            <Input
+            <input
               type="pesquisa"
               name="pesquisa"
               placeholder="Search your Settings here..."
@@ -69,22 +70,11 @@ const Profile = () => {
           </div>
         </div>
         <div>
-          {showConfirmation ? (
-            <div>
-              <p>Are you sure you want to logout?</p>
-              <br />
-              <Button onClick={handleLogout}>Yes, Logout</Button>
-              <br />
-
-              <Button onClick={handleCancelLogout}>Cancel</Button>
-            </div>
-          ) : (
-            <Button onClick={handleLogoutConfirmation}>Logout</Button>
-          )}
           {user.map((val) => {
             return (
               <div>
                 <img src={logo} alt="" />
+                {/* //isto vai ser logo do user */}
                 <h2>Perfil</h2>
                 <h2>
                   {val.icon} {val.name}

@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import Button from "../../components/button/button";
-import Input from "../../components/input/input";
-import { loginSuccess, loginFailure } from "../../organisms/redux/loginreducer";
+import Button from "../../atoms/button/button";
+import Input from "../../atoms/input/input";
+import { loginSuccess, loginFailure } from "../redux/loginreducer";
 import { ContainerImg, ContainerLogin } from "./login.style";
-import logo from "../../assets/images/logo.png";
+import logo from "../../../assets/images/logo.png";
 
 const Login = () => {
   const [email, setEmail] = useState("");

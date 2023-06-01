@@ -1,22 +1,29 @@
 import { styled } from "styled-components";
 
 const ContainerBar = styled.div`
+  display: flex;
   height: 100vh;
   width: 250px;
   background-color: white;
   padding: 16px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
 `;
 
 const ContainerHeader = styled.ul`
   padding: 0;
   width: 100%;
+  #active {
+    background-color: #f2f4f1;
+  }
 `;
 
 const ContainerLogo = styled.li`
   width: 100%;
   height: 60px;
   list-style-type: none;
-  margin: 0%;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   color: black;
@@ -33,9 +40,6 @@ const ContainerLogo = styled.li`
   :hover {
     cursor: pointer;
   }
-  .active {
-    background-color: red;
-  }
 `;
 
 const ContainerUSer = styled.div`
@@ -47,4 +51,15 @@ const ContainerUSer = styled.div`
   align-items: center;
 `;
 
-export { ContainerBar, ContainerHeader, ContainerLogo, ContainerUSer };
+const ContainerCalendar = styled.header`
+  border: 3px solid blue;
+  border-radius: 15px;
+`;
+
+export {
+  ContainerBar,
+  ContainerHeader,
+  ContainerLogo,
+  ContainerUSer,
+  ContainerCalendar,
+};

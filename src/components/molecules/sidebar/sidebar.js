@@ -1,22 +1,14 @@
 import React from "react";
-
 import { Sidebardata } from "./sidebardata";
-import {
-  ContainerBar,
-  ContainerHeader,
-  ContainerLogo,
-  ContainerUSer,
-} from "./sidebar.style";
-import logo from "../../../assets/images/logo.png";
-
+import { ContainerBar, ContainerHeader, ContainerLogo } from "./sidebar.style";
+import { GiHamburgerMenu } from "react-icons/gi";
 const Sidebar = () => {
   return (
     <>
       <ContainerBar>
-        <img src={logo} alt="Logo" />
-
-        <ContainerUSer></ContainerUSer>
-
+        <div>
+          <GiHamburgerMenu />
+        </div>
         {Sidebardata.map((val, key) => {
           return (
             <ContainerHeader>

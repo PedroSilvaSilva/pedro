@@ -1,17 +1,27 @@
 import React from "react";
 import Sidebar from "../../molecules/sidebar/sidebar";
+
+import { Container, ContainerMain } from "./dashboard.style";
 import Header from "../../../organisms/header/header";
-import { WidgetLayout, Container, ContainerMain } from "./dashboard.style";
+import {
+  SideHeader,
+  SidebarCalendar,
+} from "../../molecules/sidebar/sidebardata";
+import Card from "../../molecules/card/card";
 
 const Layout = () => {
   return (
-    <ContainerMain>
-      <Container>
+    <ContainerMain className="container">
+      <main>
+        <Header />
+      </main>
+      <div id="sidebar">
         <Sidebar />
-        <WidgetLayout>
-          <Header />
-        </WidgetLayout>
-      </Container>
+      </div>
+      <div id="content1"></div>
+      <div id="content2">
+        <Card />
+      </div>
     </ContainerMain>
   );
 };

@@ -6,17 +6,17 @@ import {
   Navigate,
 } from "react-router-dom";
 import Login from "./components/molecules/login/login";
-import GlobalStyle from "./components/templates/theme/globalstyles";
-import { Provider } from "react-redux";
-import store from "./components/molecules/redux/store";
 import Layout from "./components/templates/layout/dashboard";
 import TermsAndConditions from "./organisms/terms/terms";
 import Profile from "./pages/profile/profile";
 import Createaccount from "./pages/createaccount/createaccount";
 import Welcome from "./organisms/welcome/welcome";
 import Task from "./pages/task/task";
+import { Provider } from "react-redux";
+import store from "./components/molecules/redux/store";
 import Overview from "./pages/overview";
 import ReactSwitch from "react-switch";
+import GlobalStyle from "./components/templates/theme/globalstyles";
 
 export const ThemeContext = createContext(null);
 
@@ -36,7 +36,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Navigate to="/login" />} />
               <Route path="/terms" element={<TermsAndConditions />} />
-              <Route exact path="/dashboard" element={<Layout />} />
+              <Route path="/dashboard" element={<Layout />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/task" element={<Task />} />
               <Route path="/overview" element={<Overview />} />

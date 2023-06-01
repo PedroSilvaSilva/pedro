@@ -3,9 +3,13 @@ import Button from "../../components/atoms/button/button";
 import { useNavigate } from "react-router-dom";
 import { user } from "../../organisms/data/datauser";
 import Sidebar from "../../components/molecules/sidebar/sidebar";
-import { ContainerPro, ContainerUser } from "./profile.style";
-import Input from "../../components/atoms/input/input";
 import { SidebarCalendar } from "../../components/molecules/sidebar/sidebarcalendar";
+import {
+  ContainerPro,
+  ContainerUser,
+  ContainerCalendar,
+} from "./profile.style";
+
 import logo from "../../assets/images/logo.png";
 
 const Profile = () => {
@@ -69,7 +73,7 @@ const Profile = () => {
             })}
           </div>
         </div>
-        <div>
+        <ContainerCalendar>
           {user.map((val) => {
             return (
               <div>
@@ -87,7 +91,7 @@ const Profile = () => {
             );
           })}
           <SidebarCalendar />
-        </div>
+        </ContainerCalendar>
       </ContainerPro>
     </>
   );

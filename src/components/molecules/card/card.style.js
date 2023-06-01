@@ -8,6 +8,10 @@ const ContainerCard = styled.div`
 const ContinerSection = styled.section`
   display: flex;
   gap: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 690px;
+  height: auto;
 
   ul {
     display: flex;
@@ -15,6 +19,7 @@ const ContinerSection = styled.section`
     height: auto;
     width: 100%;
     border: 2px solid black;
+    margin-top: 50px;
   }
 `;
 

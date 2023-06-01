@@ -27,43 +27,44 @@ const ContainerMain = styled.div`
   text-align: center;
 
   nav {
-    background: #a7ffeb;
     grid-area: nav;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
   }
 
   main {
-    background: #84ffff;
     grid-area: main;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
   }
 
   #sidebar {
-    background: #18ffff;
     grid-area: sidebar;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
   }
 
   #content1 {
-    background: #6fffd2;
     grid-area: content1;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
   }
 
   #content2 {
     display: flex;
     flex-direction: row;
-    background: #64ffda;
+    background-color: white;
     grid-area: content2;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
   }
 
-  #content3 {
+  /* #content3 {
     background: #73ffba;
     grid-area: content3;
     border-radius: var(--main-radius);
@@ -75,7 +76,7 @@ const ContainerMain = styled.div`
     grid-area: footer;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
-  }
+  } */
 
   a {
     text-align: center;
@@ -86,7 +87,7 @@ const ContainerMain = styled.div`
     margin: 1rem;
   }
 
-  @media only screen and (max-width: 550px) {
+  /* @media only screen and (max-width: 550px) {
     .container {
       grid-template-columns: 1fr;
       grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
@@ -99,7 +100,7 @@ const ContainerMain = styled.div`
         "content3"
         "footer";
     }
-  }
+  } */
 `;
 
 export { Container, ContainerMain };

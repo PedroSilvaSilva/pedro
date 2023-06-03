@@ -1,67 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
+import React from "react";
+
+import { Link } from "react-router-dom";
 
 import { Button, Input } from "_components/atoms";
-
-import { loginSuccess, loginFailure } from "_store/login-reducer";
 
 import logo from "_assets/images/logo.png";
 
 import { ContainerImg, ContainerLogin } from "./login.style";
+import { useLogin } from "./login.handlers";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const error = useSelector((state) => state.error);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const handleCreateAccount = () => {
-    navigate("/createaccount");
-  };
-
-  useEffect(() => {
-    if (error) {
-      alert(error);
-      dispatch(loginFailure(null));
-    }
-  }, [error, dispatch]);
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-
-    setIsLoading(true);
-
-    axios
-      .post(
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDq_DCx4aklBNibf1kl3KMil11DJpz7TlQ",
-        {
-          email,
-          password,
-          returnSecureToken: true,
-        }
-      )
-      .then((response) => {
-        setEmail("");
-        setPassword("");
-        dispatch(loginSuccess());
-        navigate("/welcome");
-      })
-      .catch((error) => {
-        dispatch(
-          loginFailure(
-            "An error occurred while logging in. Please check your credentials."
-          )
-        );
-        console.error(error);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  };
+  const { email, setEmail, password, setPassword, isLoading, error,handleLogin } =
+    useLogin();
 
   return (
     <section>
@@ -97,7 +47,7 @@ const Login = () => {
           </form>
           <p>
             <br />
-            <Button onClick={handleCreateAccount}>Create Account</Button>
+            <Link  to="/createaccount">Create Account</Link>
           </p>
         </div>
       </ContainerLogin>

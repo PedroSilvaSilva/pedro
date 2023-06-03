@@ -5,7 +5,7 @@ import Button from "_components/atoms/button/button";
 
 import logo from "_assets/images/logo.png";
 
-import { user } from "../data/datauser";
+import { user } from "../../components/organisms/data/datauser";
 
 import { Container } from "./welcome.style";
 

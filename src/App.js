@@ -9,10 +9,8 @@ import { Provider } from "react-redux";
 // import ReactSwitch from "react-switch";
 import { ThemeProvider } from "styled-components";
 
-import Login from "./components/molecules/login/login";
-
-import Welcome from "./components/organisms/welcome/welcome";
-
+import Login from "_pages/login/login";
+import Welcome from "_pages/welcome/welcome";
 import Profile from "_pages/profile/profile";
 import Dashboard from "_pages/dashboard/dashboard";
 import Createaccount from "_pages/createaccount/createaccount";

@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "../../molecules/sidebar/sidebar";
-import Header from "../../../organisms/header/header";
+import Header from "../../../components/organisms/header/header";
 import Calendar from "react-calendar";
 import Card from "../../molecules/card/card";
 import { ContainerMain } from "./dashboard.style";

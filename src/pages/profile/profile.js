@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "../../components/atoms/button/button";
 import { useNavigate } from "react-router-dom";
-import { user } from "../../organisms/data/datauser";
+import { user } from "../../components/organisms/data/datauser";
 import Sidebar from "../../components/molecules/sidebar/sidebar";
 import { SidebarCalendar } from "../../components/molecules/sidebar/sidebarcalendar";
 import {

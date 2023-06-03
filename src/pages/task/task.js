@@ -4,8 +4,8 @@ import Card from "../../components/molecules/card/card";
 import { ContainerCard } from "./task.style";
 import Calendar from "react-calendar";
 import { SidebarCalendar } from "../../components/molecules/sidebar/sidebarcalendar";
-import Header from "../../organisms/header/header";
-import { task } from "../../organisms/data/datatask";
+import Header from "../../components/organisms/header/header";
+import { task } from "../../components/organisms/data/datatask";
 
 const Task = () => {
   return (

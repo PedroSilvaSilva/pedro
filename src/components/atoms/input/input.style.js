@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import theme from "../../templates/theme/theme";
+import theme from "../../../theme/theme";
 
 const Input = styled.input`
   border: none;

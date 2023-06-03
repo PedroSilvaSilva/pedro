@@ -1,9 +1,14 @@
 import React from "react";
-import { Container } from "./welcome.style";
-import Button from "../../components/atoms/button/button";
 import { useNavigate } from "react-router-dom";
-import logo from "../../assets/images/logo.png";
+
+import Button from "_components/atoms/button/button";
+
+import logo from "_assets/images/logo.png";
+
 import { user } from "../data/datauser";
+
+import { Container } from "./welcome.style";
+
 const Welcome = () => {
   const navigate = useNavigate();
 

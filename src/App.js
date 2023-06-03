@@ -5,34 +5,40 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import { Provider } from "react-redux";
+import ReactSwitch from "react-switch";
+import { ThemeProvider } from "styled-components";
+
 import Login from "./components/molecules/login/login";
+import store from "./components/molecules/redux/store";
 import Layout from "./components/templates/layout/dashboard";
-import TermsAndConditions from "./organisms/terms/terms";
+
+import TermsAndConditions from "./components/organisms/terms/terms";
+import Welcome from "./components/organisms/welcome/welcome";
+
 import Profile from "./pages/profile/profile";
 import Createaccount from "./pages/createaccount/createaccount";
-import Welcome from "./organisms/welcome/welcome";
 import Task from "./pages/task/task";
-import { Provider } from "react-redux";
-import store from "./components/molecules/redux/store";
 import Overview from "./pages/overview";
-import ReactSwitch from "react-switch";
-import GlobalStyle from "./components/templates/theme/globalstyles";
+
+import GlobalStyle from "./theme/globalstyles";
+import theme from "./theme/theme";
 
 export const ThemeContext = createContext(null);
 
 const App = () => {
-  const [theme, setTheme] = useState("dark");
+  const [themeMode, setTheme] = useState("dark");
 
   const toggleTheme = () => {
     setTheme((curr) => (curr === "light" ? "dark" : "light"));
   };
 
   return (
-    <div id={theme}>
+    <ThemeProvider theme={theme}>
       <Provider store={store}>
         <Router>
           <GlobalStyle />
-          <ThemeContext.Provider value={{ theme, toggleTheme }}>
+          <ThemeContext.Provider value={{ theme: themeMode, toggleTheme }}>
             {/* <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} /> */}
             <Routes>
               <Route path="/" element={<Navigate to="/login" />} />
@@ -48,7 +54,7 @@ const App = () => {
           </ThemeContext.Provider>
         </Router>
       </Provider>
-    </div>
+    </ThemeProvider>
   );
 };
 

@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Button from "../../components/atoms/button/button";
-import Input from "../../components/atoms/input/input.style";
-import {
-  SideHeader,
-  Sidebardata,
-} from "../../components/molecules/sidebar/sidebardata";
-import { ContainerNav } from "./header.style";
+
+import Input from "_components/atoms/input/input.style";
+
 import { task } from "../data/datatask";
 
 const Header = () => {

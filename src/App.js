@@ -6,23 +6,24 @@ import {
   Navigate,
 } from "react-router-dom";
 import { Provider } from "react-redux";
-import ReactSwitch from "react-switch";
+// import ReactSwitch from "react-switch";
 import { ThemeProvider } from "styled-components";
 
 import Login from "./components/molecules/login/login";
-import store from "./components/molecules/redux/store";
-import Layout from "./components/templates/layout/dashboard";
 
-import TermsAndConditions from "./components/organisms/terms/terms";
 import Welcome from "./components/organisms/welcome/welcome";
 
-import Profile from "./pages/profile/profile";
-import Createaccount from "./pages/createaccount/createaccount";
-import Task from "./pages/task/task";
-import Overview from "./pages/overview";
+import Profile from "_pages/profile/profile";
+import Dashboard from "_pages/dashboard/dashboard";
+import Createaccount from "_pages/createaccount/createaccount";
+import Task from "_pages/task/task";
+import Overview from "_pages/overview";
+import TermsAndConditions from "_pages/terms/terms";
 
-import GlobalStyle from "./theme/globalstyles";
-import theme from "./theme/theme";
+import GlobalStyle from "_theme/globalstyles";
+import theme from "_theme/theme";
+
+import store from "_store/store";
 
 export const ThemeContext = createContext(null);
 
@@ -43,7 +44,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Navigate to="/login" />} />
               <Route path="/terms" element={<TermsAndConditions />} />
-              <Route path="/dashboard" element={<Layout />} />
+              <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/task" element={<Task />} />
               <Route path="/overview" element={<Overview />} />

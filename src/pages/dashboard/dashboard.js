@@ -1,10 +1,11 @@
 import React from "react";
-import Sidebar from "../../molecules/sidebar/sidebar";
-import Header from "../../../components/organisms/header/header";
 import Calendar from "react-calendar";
-import Card from "../../molecules/card/card";
+
+import { Sidebar, Card, User } from "_components/molecules";
+
+import Header from "../../components/organisms/header/header";
+
 import { ContainerMain } from "./dashboard.style";
-import User from "../../molecules/user/user";
 
 const Layout = () => {
   return (

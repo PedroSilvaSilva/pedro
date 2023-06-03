@@ -1,16 +1,19 @@
 import React, { useState } from "react";
-import Button from "../../components/atoms/button/button";
 import { useNavigate } from "react-router-dom";
-import { user } from "../../components/organisms/data/datauser";
-import Sidebar from "../../components/molecules/sidebar/sidebar";
-import { SidebarCalendar } from "../../components/molecules/sidebar/sidebarcalendar";
+
+import { Sidebar, SidebarCalendar } from "_components/molecules";
+
+import { Button } from "_components/atoms";
+
+import { user } from "_data/datauser";
+
+import logo from "_assets/images/logo.png";
+
 import {
   ContainerPro,
   ContainerUser,
   ContainerCalendar,
 } from "./profile.style";
-
-import logo from "../../assets/images/logo.png";
 
 const Profile = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);

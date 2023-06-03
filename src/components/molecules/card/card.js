@@ -1,28 +1,24 @@
 import React from "react";
-import { task } from "../../../components/organisms/data/datatask";
+import { task } from "../../../data/datatask";
 import { ContainerCard, ContinerSection } from "./card.style";
 
 const Card = () => {
   return (
-    <body>
-      <main>
-        <ContinerSection>
-          {task.map((val) => {
-            return (
-              <ContainerCard>
-                <ul>
-                  <li>Id: {val.key}</li>
-                  <li>Title: {val.title}</li>
-                  <li>Creator: {val.creator}</li>
-                  <li>Department: {val.departament}</li>
-                  <button>View Task</button>
-                </ul>
-              </ContainerCard>
-            );
-          })}
-        </ContinerSection>
-      </main>
-    </body>
+    <ContinerSection>
+      {task.map((val) => {
+        return (
+          <ContainerCard>
+            <ul>
+              <li>Id: {val.key}</li>
+              <li>Title: {val.title}</li>
+              <li>Creator: {val.creator}</li>
+              <li>Department: {val.departament}</li>
+              <button>View Task</button>
+            </ul>
+          </ContainerCard>
+        );
+      })}
+    </ContinerSection>
   );
 };
 

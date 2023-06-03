@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-import Input from "_components/atoms/input/input.style";
+import { Input } from "_components/atoms";
 
-import { task } from "../data/datatask";
+import { task } from "_data/datatask";
 
 const Header = () => {
   const [item, setItem] = useState(null);

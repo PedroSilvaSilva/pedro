@@ -5,6 +5,7 @@
       "_api/*": ["./src/api/*"],
       "_assets/*": ["./src/assets/*"],
       "_components/*": ["./src/components/*"],
+      "_data/*": ["./src/data/*"],
       "_pages/*": ["./src/pages/*"],
       "_store/*": ["./src/store/*"],
       "_theme/*": ["./src/theme/*"],

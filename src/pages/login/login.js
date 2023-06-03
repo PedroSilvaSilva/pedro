@@ -5,9 +5,9 @@ import axios from "axios";
 
 import { Button, Input } from "_components/atoms";
 
-import { loginSuccess, loginFailure } from "../../store/login-reducer";
+import { loginSuccess, loginFailure } from "_store/login-reducer";
 
-import logo from "../../../assets/images/logo.png";
+import logo from "_assets/images/logo.png";
 
 import { ContainerImg, ContainerLogin } from "./login.style";
 

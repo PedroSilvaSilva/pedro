@@ -33,6 +33,7 @@ const App = () => {
         <Router>
           <GlobalStyle />
           <ThemeContext.Provider value={{ theme, toggleTheme }}>
+            {/* <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} /> */}
             <Routes>
               <Route path="/" element={<Navigate to="/login" />} />
               <Route path="/terms" element={<TermsAndConditions />} />
@@ -45,7 +46,6 @@ const App = () => {
               <Route path="/createaccount" element={<Createaccount />} />
             </Routes>
           </ThemeContext.Provider>
-          {/* <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} /> */}
         </Router>
       </Provider>
     </div>

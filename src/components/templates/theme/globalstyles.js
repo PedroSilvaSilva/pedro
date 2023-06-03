@@ -47,7 +47,7 @@ a{
 }
 
 #dark {
-    background-color: #f2f4f1;
+    background-color: red;
 }
 
 

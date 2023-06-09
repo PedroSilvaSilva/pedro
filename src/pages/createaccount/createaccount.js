@@ -1,8 +1,8 @@
-import Button from "../../components/button/button";
-import Input from "../../components/input/input";
+import Button from "../../components/atoms/button/button";
+import Input from "../../components/atoms/input/input";
 import axios from "axios";
 import React, { useState } from "react";
-
+import logo from "../../assets/images/logo.png";
 import { ContainerCreate } from "./createaccount.style";
 import { useNavigate } from "react-router-dom";
 
@@ -41,8 +41,9 @@ const Createaccount = () => {
     <>
       <ContainerCreate>
         <article>
-          <img src="https://schedulecreation.com/logo.png" alt="logo" />
-          <h1>Create Account </h1>
+          <img src={logo} alt="Logo" />
+          <h2>Create Account </h2>
+          <br />
           <form onSubmit={handleLogin}>
             <Input
               type="email"
@@ -60,7 +61,10 @@ const Createaccount = () => {
             />
             <div>{error && <p>{error}</p>}</div>
             <Button type="submit">Creat Account</Button>
-            <Button onClick={handleCreateAccount}>Login</Button>
+            <p>
+              <br />
+              <Button onClick={handleCreateAccount}>Login</Button>
+            </p>
           </form>
         </article>
       </ContainerCreate>

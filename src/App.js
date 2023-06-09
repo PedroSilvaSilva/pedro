@@ -1,47 +1,59 @@
-import React from "react";
+import React, { useState, createContext } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
 } from "react-router-dom";
-import Login from "./pages/login/login";
-import GlobalStyle from "./theme/globalstyles";
 import { Provider } from "react-redux";
-import store from "./organisms/redux/store";
-import Layout from "./organisms/layout/dashboard";
-import TermsAndConditions from "./organisms/terms/terms";
-import Profile from "./pages/profile/profile";
-import Createaccount from "./pages/createaccount/createaccount";
-import Welcome from "./organisms/welcome/welcome";
+// import ReactSwitch from "react-switch";
+import { ThemeProvider } from "styled-components";
+
+import Login from "_pages/login/login";
+import Welcome from "_pages/welcome/welcome";
+import Profile from "_pages/profile/profile";
+import Dashboard from "_pages/dashboard/dashboard";
+import Createaccount from "_pages/createaccount/createaccount";
+import Task from "_pages/task/task";
+import Overview from "_pages/overview";
+import TermsAndConditions from "_pages/terms/terms";
+
+import GlobalStyle from "_theme/globalstyles";
+import theme from "_theme/theme";
+
+import store from "_store/store";
+
+export const ThemeContext = createContext(null);
 
 const App = () => {
+  const [themeMode, setTheme] = useState("dark");
+
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === "light" ? "dark" : "light"));
+  };
+
   return (
-    <>
-      <div>
-        <button></button>
-      </div>
+    <ThemeProvider theme={theme}>
       <Provider store={store}>
         <Router>
           <GlobalStyle />
-          <Routes>
-            <Route path="/" element={<Navigate to="/login" />} />
-            <Route path="/terms" element={<TermsAndConditions />} />
-            <Route path="/dashboard" element={<Layout />} />
-            <Route path="/welcome" element={<Welcome />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/createaccount" element={<Createaccount />} />
-
-            <Route
-              path="/overview"
-              element={<Navigate replace to="overview" />}
-            />
-
-            <Route path="/profile" element={<Profile />} />
-          </Routes>
+          <ThemeContext.Provider value={{ theme: themeMode, toggleTheme }}>
+            {/* <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} /> */}
+            <Routes>
+              <Route path="/" element={<Navigate to="/login" />} />
+              <Route path="/terms" element={<TermsAndConditions />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/task" element={<Task />} />
+              <Route path="/overview" element={<Overview />} />
+              <Route path="/welcome" element={<Welcome />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/createaccount" element={<Createaccount />} />
+            </Routes>
+          </ThemeContext.Provider>
         </Router>
       </Provider>
-    </>
+    </ThemeProvider>
   );
 };
 

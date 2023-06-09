@@ -4,17 +4,34 @@ const ContainerLogin = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
-  height: 100vh;
-`;
+  background-color: #f2f4f1;
+  gap: 100px;
 
-const WidgetLogin = styled.section`
-  display: flex;
-  gap: 50px;
-
-  .title {
-    text-align: center;
+  @media screen and (max-width: 960px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 15px;
+    h2 {
+      font-size: 14px;
+      text-align: center;
+    }
+    img {
+      width: 100%;
+    }
   }
 `;
 
-export { ContainerLogin, WidgetLogin };
+const ContainerImg = styled.div`
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 15px;
+  gap: 35px;
+`;
+
+export { ContainerLogin, ContainerImg };

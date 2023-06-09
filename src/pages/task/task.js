@@ -6,8 +6,12 @@ const Task = () => {
   return (
     <section>
       <article>
-        {task.map((val, key) => {
-          return <div>{val.creator}</div>;
+        {task.map((val) => {
+          return (
+            <div>
+              <p>{val.title}</p>
+            </div>
+          );
         })}
       </article>
     </section>

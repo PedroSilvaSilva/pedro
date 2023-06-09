@@ -64,20 +64,6 @@ const ContainerMain = styled.div`
     padding-top: var(--main-padding);
   }
 
-  /* #content3 {
-    background: #73ffba;
-    grid-area: content3;
-    border-radius: var(--main-radius);
-    padding-top: var(--main-padding);
-  }
-
-  footer {
-    background: #1de9b6;
-    grid-area: footer;
-    border-radius: var(--main-radius);
-    padding-top: var(--main-padding);
-  } */
-
   a {
     text-align: center;
     display: block;
@@ -86,21 +72,6 @@ const ContainerMain = styled.div`
     font-weight: bold;
     margin: 1rem;
   }
-
-  /* @media only screen and (max-width: 550px) {
-    .container {
-      grid-template-columns: 1fr;
-      grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
-      grid-template-areas:
-        "nav"
-        "sidebar"
-        "main"
-        "content1"
-        "content2"
-        "content3"
-        "footer";
-    }
-  } */
 `;
 
 export { Container, ContainerMain };

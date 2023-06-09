@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { InputWrapper, InputStyled } from "./input.style";
-
+import { AiOutlineSearch } from "react-icons/ai";
 const Input = (props) => {
   const [type, setType] = useState(props.type ?? "text");
 
@@ -8,7 +8,7 @@ const Input = (props) => {
     return (
       <InputWrapper>
         <InputStyled {...props} type={type} />
-        <button
+        {/* <button
           type="button"
           onClick={() =>
             setType((currentValue) =>
@@ -16,8 +16,8 @@ const Input = (props) => {
             )
           }
         >
-          yo
-        </button>
+          <AiOutlineSearch />
+        </button> */}
       </InputWrapper>
     );
   }

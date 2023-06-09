@@ -1,10 +1,20 @@
-import Button from "../../components/atoms/button/button";
-import Input from "../../components/atoms/input/input";
 import axios from "axios";
 import React, { useState } from "react";
-import logo from "../../assets/images/logo.png";
-import { ContainerCreate } from "./createaccount.style";
-import { useNavigate } from "react-router-dom";
+import overlay_3 from "_assets/images/overlay_3.jpg";
+import logo from "_assets/images/logo.png";
+import { GiFrankensteinCreature } from "react-icons/gi";
+import {
+  Button,
+  ErrorMessage,
+  Input,
+  Fieldset,
+  Form,
+  NewUserText,
+  LoginTitle,
+  LoginContainer,
+  Section,
+} from "./createaccount.style";
+import { Link, useNavigate } from "react-router-dom";
 
 const Createaccount = () => {
   const [email, setEmail] = useState("");
@@ -38,38 +48,45 @@ const Createaccount = () => {
   };
 
   return (
-    <>
-      <ContainerCreate>
-        <article>
-          <img src={logo} alt="Logo" />
-          <h2>Create Account </h2>
-          <br />
-          <form onSubmit={handleLogin}>
+    <Section>
+      <LoginContainer>
+        <img src={logo} alt="logo" />
+        <GiFrankensteinCreature size={52} />
+        <LoginTitle>Create Account</LoginTitle>
+        <NewUserText>
+          <span>Have Account?</span>
+          <Link to="/login">Login</Link>
+        </NewUserText>
+
+        <Form onSubmit={handleLogin}>
+          <Fieldset>
             <Input
               type="email"
               name="email"
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
+          </Fieldset>
+          <Fieldset>
             <Input
               type="password"
               name="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
-            <div>{error && <p>{error}</p>}</div>
-            <Button type="submit">Creat Account</Button>
-            <p>
-              <br />
-              <Button onClick={handleCreateAccount}>Login</Button>
-            </p>
-          </form>
-        </article>
-      </ContainerCreate>
-    </>
+          </Fieldset>
+          {error && <ErrorMessage>{error}</ErrorMessage>}
+          <br />
+          <Button type="submit">Create Account</Button>
+        </Form>
+      </LoginContainer>
+
+      <img className="imagem" src={overlay_3} alt="" />
+    </Section>
   );
 };
-
 export default Createaccount;

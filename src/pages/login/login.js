@@ -2,28 +2,48 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-import { Button, Input } from "_components/atoms";
-
+import overlay_3 from "_assets/images/overlay_3.jpg";
 import logo from "_assets/images/logo.png";
-
-import { ContainerImg, ContainerLogin } from "./login.style";
 import { useLogin } from "./login.handlers";
+import { BsDatabaseFillDash } from "react-icons/bs";
+import {
+  Button,
+  ForgotPasswordLink,
+  ErrorMessage,
+  Input,
+  Fieldset,
+  Form,
+  NewUserText,
+  LoginTitle,
+  LoginContainer,
+  Section,
+} from "../login/login.style";
 
 const Login = () => {
-  const { email, setEmail, password, setPassword, isLoading, error,handleLogin } =
-    useLogin();
+  const {
+    email,
+    setEmail,
+    password,
+    setPassword,
+    isLoading,
+    error,
+    handleLogin,
+  } = useLogin();
 
   return (
-    <section>
-      <ContainerLogin>
-        <ContainerImg>
-          <h2>Take your productivity to the next level.</h2>
-          <img src={logo} alt="Logo" />
-        </ContainerImg>
-        <div>
-          <h2>Login</h2>
-          <br />
-          <form onSubmit={handleLogin}>
+    <Section>
+      <LoginContainer>
+        <img src={logo} alt="logo" />
+        <BsDatabaseFillDash size={52} />
+
+        <LoginTitle>Login</LoginTitle>
+        <NewUserText>
+          <span>New user?</span>
+          <Link to="/createaccount">Create Account</Link>
+        </NewUserText>
+
+        <Form onSubmit={handleLogin}>
+          <Fieldset>
             <Input
               type="email"
               name="email"
@@ -32,6 +52,8 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
               required
             />
+          </Fieldset>
+          <Fieldset>
             <Input
               type="password"
               name="password"
@@ -40,18 +62,19 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            {error && <p>{error}</p>}
-            <Button type="submit" disabled={isLoading}>
-              {isLoading ? "Logging in..." : "Login"}
-            </Button>
-          </form>
-          <p>
-            <br />
-            <Link  to="/createaccount">Create Account</Link>
-          </p>
-        </div>
-      </ContainerLogin>
-    </section>
+          </Fieldset>
+          {error && <ErrorMessage>{error}</ErrorMessage>}
+          <ForgotPasswordLink>
+            <Link to="/forget">Forgot password?</Link>
+          </ForgotPasswordLink>
+          <Button type="submit" disabled={isLoading}>
+            {isLoading ? "Logging in..." : "Login"}
+          </Button>
+        </Form>
+      </LoginContainer>
+
+      <img className="imagem" src={overlay_3} alt="" />
+    </Section>
   );
 };
 

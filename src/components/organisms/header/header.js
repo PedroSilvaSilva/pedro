@@ -10,8 +10,8 @@ const Header = () => {
 
   useEffect(() => {
     const fecthItemById = () => {
-      const id = [];
-      const foundItem = task.find((item) => item.id === id);
+      const key = 2;
+      const foundItem = task.find((item) => item.key === key);
       if (foundItem) {
         setItem(foundItem);
       } else {
@@ -37,7 +37,9 @@ const Header = () => {
       <h1>Tasks</h1>
       <h3>Make your tasks</h3>
       <article>
-        <h2>{item.id}</h2>
+        <h2>{item.key}</h2>
+        <h2>{item.title}</h2>
+        <h2>{item.creator}</h2>
       </article>
     </section>
   );

@@ -17,6 +17,7 @@ import Createaccount from "_pages/createaccount/createaccount";
 import Task from "_pages/task/task";
 import Overview from "_pages/overview";
 import TermsAndConditions from "_pages/terms/terms";
+import ResetPasswordForm from "_pages/forget/forget";
 
 import GlobalStyle from "_theme/globalstyles";
 import theme from "_theme/theme";
@@ -49,6 +50,7 @@ const App = () => {
               <Route path="/welcome" element={<Welcome />} />
               <Route path="/login" element={<Login />} />
               <Route path="/createaccount" element={<Createaccount />} />
+              <Route path="/forget" element={<ResetPasswordForm />} />
             </Routes>
           </ThemeContext.Provider>
         </Router>

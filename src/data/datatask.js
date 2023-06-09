@@ -4,7 +4,7 @@ export const task = [
   {
     creator: "Pedro Silva",
     title: "fix grid",
-    key: "2",
+    key: 2,
     departament: "Web Dev",
     icon: <MdOutlineDeveloperMode />,
     order: "",
@@ -15,7 +15,7 @@ export const task = [
   {
     creator: "Pedro Silva",
     title: "fix grid",
-    key: "3",
+    key: 2,
     departament: "Web Dev",
     icon: <MdOutlineDeveloperMode />,
     order: "",
@@ -26,7 +26,7 @@ export const task = [
   {
     creator: "Pedro Silva",
     title: "fix grid",
-    key: "4",
+    key: 2,
     departament: "Web Dev",
     icon: <MdOutlineDeveloperMode />,
     order: "",
@@ -37,7 +37,7 @@ export const task = [
   {
     creator: "Pedro Silva",
     title: "fix grid",
-    key: "5",
+    key: 2,
     departament: "Web Dev",
     icon: <MdOutlineDeveloperMode />,
   },

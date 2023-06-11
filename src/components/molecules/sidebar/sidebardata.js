@@ -13,15 +13,16 @@ export const Sidebardata = [
     icon: <AiOutlineHome />,
     link: "/dashboard",
   },
-  {
-    title: "Overview",
-    icon: <RxVercelLogo />,
-    link: "/overview",
-  },
+
   {
     title: "Task",
     icon: <BsListTask />,
     link: "/task",
+  },
+  {
+    title: "AddTask",
+    icon: <BiLogOut />,
+    link: "/addtask",
   },
   {
     title: "Profile",

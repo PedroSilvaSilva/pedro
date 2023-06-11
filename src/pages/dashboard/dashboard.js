@@ -1,20 +1,31 @@
 import React from "react";
-import Calendar from "react-calendar";
 
-import { Sidebar, User } from "_components/molecules";
+import { Sidebar } from "_components/molecules";
+import { styled } from "styled-components";
 
-import Header from "../../components/organisms/header/header";
+import CardDashboard from "_components/molecules/card/card";
 
-import { ContainerMain } from "./dashboard.style";
+const ContairnerGeral = styled.div`
+  height: 100vh;
+  width: 100%;
+  display: flex;
+
+  background-color: #f2f2f2;
+`;
+const Container = styled.div`
+  background-color: #f2f2f2;
+`;
 
 const Layout = () => {
   return (
-    <ContainerMain className="container">
-      <main></main>
-      <div id="sidebar">
+    <ContairnerGeral>
+      <div>
         <Sidebar />
       </div>
-    </ContainerMain>
+      <Container>
+        <CardDashboard />
+      </Container>
+    </ContairnerGeral>
   );
 };
 

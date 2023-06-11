@@ -16,6 +16,7 @@ const ContainerHeader = styled.ul`
   width: 100%;
   #active {
     background-color: #f2f4f1;
+    border-radius: 15px;
   }
 `;
 

@@ -129,7 +129,7 @@ const ContainerImge = styled.div`
   }
 `;
 
-const CardDashboard = () => {
+const CardProfile = () => {
   const navigate = useNavigate();
 
   const handlenavigate = () => {
@@ -185,4 +185,4 @@ const CardDashboard = () => {
   );
 };
 
-export default CardDashboard;
+export default CardProfile;

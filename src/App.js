@@ -23,6 +23,8 @@ import GlobalStyle from "_theme/globalstyles";
 import theme from "_theme/theme";
 
 import store from "_store/store";
+import AddTask from "_pages/task/addtask";
+import Toolbar from "_components/molecules/toolbar/tolbar";
 
 export const ThemeContext = createContext(null);
 
@@ -46,6 +48,8 @@ const App = () => {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/task" element={<Task />} />
+              <Route path="/tolbar" element={<Toolbar />} />
+              <Route path="/addtask" element={<AddTask />} />
               <Route path="/overview" element={<Overview />} />
               <Route path="/welcome" element={<Welcome />} />
               <Route path="/login" element={<Login />} />

@@ -4,17 +4,12 @@ import theme from "./theme";
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.cdnfonts.com/css/gelion');
  * {
-  
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Gelion', sans-serif;
   }
-  body{
-    max-width: 1920px;
-    margin: 0 auto;
-    
-  }
+  
   h1,h2,h3,h4,h5,h6,p{
     font-family: 'Gelion', sans-serif;
 

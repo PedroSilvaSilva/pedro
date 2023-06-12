@@ -30,6 +30,7 @@ const Title = styled.h2`
 const Description = styled.p`
   font-size: 16px;
   margin-bottom: 16px;
+  color: #1d555e;
 `;
 
 const Button = styled.button`
@@ -68,8 +69,8 @@ const ContainerCard = styled.section`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 15px;
-  margin: 5px;
+  gap: 10px;
+  margin-bottom: 10px;
 `;
 const ContainerMenu = styled.div`
   border-bottom: 3px solid #d0d0d0;
@@ -93,12 +94,8 @@ const ContairnerGeral = styled.div`
   height: 100vh;
   width: 100%;
   display: flex;
-
-  background-color: #f2f2f2;
 `;
-const Container = styled.div`
-  background-color: #f2f2f2;
-`;
+const Container = styled.div``;
 const SideBar = styled.div``;
 
 export {

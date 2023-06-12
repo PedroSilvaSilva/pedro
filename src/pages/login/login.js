@@ -77,7 +77,6 @@ const Login = () => {
           </Button>
         </Form>
       </LoginContainer>
-
       <img className="imagem" src={overlay_3} alt="" />
     </Section>
   );

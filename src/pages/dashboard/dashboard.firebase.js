@@ -75,7 +75,6 @@ const DashboardFirebase = () => {
           <ContainerImge>
             <img src={val.image} />
           </ContainerImge>
-
           <Description>{val.description}</Description>
           <Button>See more...</Button>
         </Card>

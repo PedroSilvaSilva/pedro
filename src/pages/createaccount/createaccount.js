@@ -60,6 +60,7 @@ const Createaccount = () => {
 
         <Form onSubmit={handleLogin}>
           <Fieldset>
+            <br />
             <Input
               type="email"
               name="email"
@@ -70,6 +71,7 @@ const Createaccount = () => {
             />
           </Fieldset>
           <Fieldset>
+            <br />
             <Input
               type="password"
               name="password"
@@ -79,6 +81,7 @@ const Createaccount = () => {
               required
             />
           </Fieldset>
+          <br />
           {error && <ErrorMessage>{error}</ErrorMessage>}
           <br />
           <Button type="submit">Create Account</Button>

@@ -1,31 +1,26 @@
 import React from "react";
 
 import { Sidebar } from "_components/molecules";
-import { styled } from "styled-components";
+import {
+  ContairnerGeral,
+  Container,
+  SideBar,
+} from "../dashboard/dashboard.style";
 
-import CardDashboard from "_components/molecules/card/card";
-
-const ContairnerGeral = styled.div`
-  height: 100vh;
-  width: 100%;
-  display: flex;
-
-  background-color: #f2f2f2;
-`;
-const Container = styled.div`
-  background-color: #f2f2f2;
-`;
+import DashboardFirebase from "./dashboard.firebase";
 
 const Layout = () => {
   return (
-    <ContairnerGeral>
-      <div>
-        <Sidebar />
-      </div>
-      <Container>
-        <CardDashboard />
-      </Container>
-    </ContairnerGeral>
+    <>
+      <ContairnerGeral>
+        <SideBar>
+          <Sidebar />
+        </SideBar>
+        <Container>
+          <DashboardFirebase />
+        </Container>
+      </ContairnerGeral>
+    </>
   );
 };
 

@@ -6,9 +6,7 @@ const Sidebar = () => {
   return (
     <>
       <ContainerBar>
-        <div>
-          <GiHamburgerMenu size={33} />
-        </div>
+        <div></div>
         {Sidebardata.map((val, key) => {
           return (
             <ContainerHeader>

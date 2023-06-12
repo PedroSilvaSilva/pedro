@@ -19,11 +19,7 @@ export const Sidebardata = [
     icon: <BsListTask />,
     link: "/task",
   },
-  {
-    title: "AddTask",
-    icon: <BiLogOut />,
-    link: "/addtask",
-  },
+
   {
     title: "Profile",
     icon: <ImProfile />,

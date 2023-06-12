@@ -44,6 +44,7 @@ const Login = () => {
 
         <Form onSubmit={handleLogin}>
           <Fieldset>
+            <br />
             <Input
               type="email"
               name="email"
@@ -54,6 +55,7 @@ const Login = () => {
             />
           </Fieldset>
           <Fieldset>
+            <br />
             <Input
               type="password"
               name="password"
@@ -63,10 +65,13 @@ const Login = () => {
               required
             />
           </Fieldset>
+          <br />
           {error && <ErrorMessage>{error}</ErrorMessage>}
+
           <ForgotPasswordLink>
             <Link to="/forget">Forgot password?</Link>
           </ForgotPasswordLink>
+          <br />
           <Button type="submit" disabled={isLoading}>
             {isLoading ? "Logging in..." : "Login"}
           </Button>

@@ -4,7 +4,10 @@ const ContainerBar = styled.div`
   display: flex;
   height: 100vh;
   width: 250px;
-  background-color: white;
+  background-color: rgb(56, 148, 143);
+  box-shadow: #d8e9e6 16px 16px 32px, rgba(0, 0, 0, 0.12) 0px -16px 32px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
   padding: 16px;
   flex-direction: column;
   justify-content: center;
@@ -15,7 +18,7 @@ const ContainerHeader = styled.ul`
   padding: 0;
   width: 100%;
   #active {
-    background-color: #f2f4f1;
+    background-color: #1d555e;
     border-radius: 15px;
   }
 `;
@@ -30,6 +33,7 @@ const ContainerLogo = styled.li`
   color: black;
   justify-content: center;
   align-items: center;
+  color: #fcf6ee;
   #icon {
     flex: 30%;
     display: grid;

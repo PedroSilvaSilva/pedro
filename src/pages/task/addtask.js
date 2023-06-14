@@ -72,9 +72,10 @@ const AddTask = () => {
           onChange={(e) => setTaskpriority(e.target.value)}
           required
         >
-          <option value="high">High</option>
+          <option value="high">Escolha a prioridade da task</option>
           <option value="normal">Normal</option>
           <option value="intermediate">Intermediate</option>
+          <option value="high">High</option>
         </select>
         <button onClick={handleSubmit}>Criar Task</button>
       </div>

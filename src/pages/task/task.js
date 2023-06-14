@@ -3,7 +3,7 @@ import React from "react";
 import { Sidebar } from "_components/molecules";
 import { styled } from "styled-components";
 
-import TaskConfig from "./task.config";
+import TaskConfig from "./task.firebase";
 
 const ContairnerGeral = styled.div`
   height: 100vh;

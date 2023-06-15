@@ -2,8 +2,9 @@ import React from "react";
 
 import { Sidebar } from "_components/molecules";
 import { styled } from "styled-components";
-
+import { ContainerMenu } from "./task.style";
 import TaskConfig from "./task.firebase";
+import Toolbar from "_components/molecules/toolbar/tolbar";
 
 const ContairnerGeral = styled.div`
   height: 100vh;

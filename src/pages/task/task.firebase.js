@@ -77,8 +77,8 @@ const Pagination = ({
 };
 
 const TaskConfig = () => {
-  const [user, setUsers] = useState([]);
-  const [filteredUser, setFilteredUser] = useState([]);
+  const [users, setUsers] = useState([]);
+  const [filteredUsers, setFilteredUsers] = useState([]);
   const [filter, setFilter] = useState("all");
   const [editingTask, setEditingTask] = useState(null);
   const [showModal, setShowModal] = useState(false);
@@ -92,30 +92,27 @@ const TaskConfig = () => {
   useEffect(() => {
     const getUsers = async () => {
       const data = await getDocs(userCollectionRef);
-      const usersData = data.docs.map((docs) => ({
-        ...docs.data(),
-        id: docs.id,
+      const usersData = data.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
       }));
       setUsers(usersData);
-      setFilteredUser(usersData);
+      setFilteredUsers(usersData);
     };
     getUsers();
   }, []);
 
-  const handleFilterChange = (newFilter, searchValue = "") => {
-    setFilter(newFilter);
-    setSearchValue(searchValue);
-
-    const updatedFilteredTasks = filteredUser.filter((task) => {
-      if (newFilter === "all") {
+  useEffect(() => {
+    const handleFilterChange = users.filter((task) => {
+      if (filter === "all") {
         return true;
-      } else if (newFilter === "pending") {
+      } else if (filter === "pending") {
         return task.status === "pending";
-      } else if (newFilter === "completed") {
+      } else if (filter === "completed") {
         return task.status === "completed";
-      } else if (newFilter === "incompleted") {
+      } else if (filter === "incompleted") {
         return task.status === "incompleted";
-      } else if (newFilter === "search") {
+      } else if (filter === "search") {
         const taskName = task.taskname.toLowerCase();
         const taskDescription = task.taskdescription.toLowerCase();
         const searchTerm = searchValue.toLowerCase();
@@ -126,16 +123,13 @@ const TaskConfig = () => {
       return true;
     });
 
-    setFilteredUser(updatedFilteredTasks);
-  };
+    setFilteredUsers(handleFilterChange);
+  }, [users, filter, searchValue]);
 
-  const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
+  const handleFilterChange = (newFilter, searchValue = "") => {
+    setFilter(newFilter);
+    setSearchValue(searchValue);
   };
-
-  const indexOfLastTask = currentPage * tasksPerPage;
-  const indexOfFirstTask = indexOfLastTask - tasksPerPage;
-  const currentTasks = filteredUser.slice(indexOfFirstTask, indexOfLastTask);
 
   const NewTask = () => {
     navigate("/addtask");
@@ -156,10 +150,18 @@ const TaskConfig = () => {
     await updateDoc(taskRef, editedTask);
     setEditingTask(null);
     setShowModal(false);
-    setFilteredUser((prevState) =>
+    setFilteredUsers((prevState) =>
       prevState.map((task) => (task.id === editedTask.id ? editedTask : task))
     );
   };
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const indexOfLastTask = currentPage * tasksPerPage;
+  const indexOfFirstTask = indexOfLastTask - tasksPerPage;
+  const currentTasks = filteredUsers.slice(indexOfFirstTask, indexOfLastTask);
 
   return (
     <div>
@@ -221,11 +223,11 @@ const TaskConfig = () => {
           </Card>
         ))}
       </ContainerCard>
-      {filteredUser.length > tasksPerPage && (
+      {filteredUsers.length > tasksPerPage && (
         <Pagination
           currentPage={currentPage}
           tasksPerPage={tasksPerPage}
-          totalTasks={filteredUser.length}
+          totalTasks={filteredUsers.length}
           onPageChange={handlePageChange}
         />
       )}

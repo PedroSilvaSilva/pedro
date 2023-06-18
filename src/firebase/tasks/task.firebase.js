@@ -83,7 +83,7 @@ const TaskConfig = () => {
   const [searchValue, setSearchValue] = useState("");
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
-  const tasksPerPage = 10;
+  const tasksPerPage = 15;
   const db = getFirestore(firebaseApp);
   const userCollectionRef = collection(db, "tasks");
 
@@ -234,7 +234,7 @@ const TaskConfig = () => {
                 : val.taskdescription}
             </Description2>
             <Link className="link" onClick={() => startEditing(val)}>
-              View Task <GoArrowRight size={16} />
+              Work On Task <GoArrowRight size={16} />
             </Link>
           </Card>
         ))}
@@ -282,16 +282,22 @@ const TaskConfig = () => {
                   }
                 />
                 <Title>Priority</Title>
-                <Input
-                  type="text"
-                  value={editingTask.taskpriority}
-                  onChange={(e) =>
-                    setEditingTask({
-                      ...editingTask,
-                      taskpriority: e.target.value,
-                    })
-                  }
-                />
+                <select>
+                  <Input
+                    type="text"
+                    value={editingTask.taskpriority}
+                    onChange={(e) =>
+                      setEditingTask({
+                        ...editingTask,
+                        taskpriority: e.target.value,
+                      })
+                    }
+                  />
+                  <option value="">Escolha a propriedade da task</option>
+                  <option value="high">High</option>
+                  <option value="intermediate">Intermediate</option>
+                  <option value="normal">Normal</option>
+                </select>
                 <ModalButton>
                   <Button onClick={() => deleteTask(editingTask.id)}>
                     Delete Task

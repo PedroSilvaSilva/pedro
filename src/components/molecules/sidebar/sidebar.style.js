@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-const ContainerBar = styled.div`
+const ContainerBar = styled.section`
   display: flex;
   height: 100vh;
   width: 250px;
@@ -12,6 +12,14 @@ const ContainerBar = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 50px;
+  transform: ${({ isOpen }) =>
+    isOpen ? "translateX(0)" : "translateX(-100%)"};
+  #close {
+    display: none;
+  }
+  #open {
+    display: none;
+  }
 `;
 
 const ContainerHeader = styled.ul`
@@ -23,7 +31,7 @@ const ContainerHeader = styled.ul`
   }
 `;
 
-const ContainerLogo = styled.li`
+const ContainerLi = styled.li`
   width: 100%;
   height: 60px;
   list-style-type: none;
@@ -47,24 +55,4 @@ const ContainerLogo = styled.li`
   }
 `;
 
-const ContainerUSer = styled.div`
-  border: 1px solid blue;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-const ContainerCalendar = styled.header`
-  border: 3px solid blue;
-  border-radius: 15px;
-`;
-
-export {
-  ContainerBar,
-  ContainerHeader,
-  ContainerLogo,
-  ContainerUSer,
-  ContainerCalendar,
-};
+export { ContainerBar, ContainerHeader, ContainerLi };

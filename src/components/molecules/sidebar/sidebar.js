@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Sidebardata } from "./sidebardata";
-import { ContainerBar, ContainerHeader, ContainerLogo } from "./sidebar.style";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { ContainerBar, ContainerHeader, ContainerLi } from "./sidebar.style";
+import { Button } from "_components/atoms";
+
 const Sidebar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
-      <ContainerBar>
-        <div></div>
+      <Button onClick={toggleSidebar}>Toggle Sidebar</Button>
+      <ContainerBar isOpen={!isOpen}>
         {Sidebardata.map((val, key) => {
           return (
-            <ContainerHeader>
-              <ContainerLogo
-                key={key}
+            <ContainerHeader key={key}>
+              <ContainerLi
                 id={window.location.pathname === val.link ? "active" : ""}
                 onClick={() => {
                   window.location.pathname = val.link;
@@ -23,7 +29,7 @@ const Sidebar = () => {
                 <div id="title">
                   <h2>{val.title}</h2>
                 </div>
-              </ContainerLogo>
+              </ContainerLi>
             </ContainerHeader>
           );
         })}

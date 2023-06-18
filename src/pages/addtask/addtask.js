@@ -2,7 +2,16 @@ import React from "react";
 import { initializeApp } from "firebase/app";
 import { getFirestore, getDocs, collection, addDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import styled from "styled-components";
+import {
+  FormButton,
+  FormSelect,
+  FormInput,
+  FormLabel,
+  FormWrapper,
+} from "../addtask/addtask.style";
+import { Button } from "_components/atoms";
+import { useNavigate } from "react-router-dom";
+import { ButtonContainer } from "_components/atoms/button/button.style";
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyA1i2tFg43acxCVK9X3fFFVM042qPRDVnw",
@@ -10,49 +19,13 @@ const firebaseApp = initializeApp({
   projectId: "projecto-971ef",
 });
 
-const FormWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 300px;
-  margin: 0 auto;
-`;
-
-const FormLabel = styled.label`
-  margin-bottom: 5px;
-  font-weight: bold;
-`;
-
-const FormInput = styled.input`
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-`;
-
-const FormSelect = styled.select`
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-`;
-
-const FormButton = styled.button`
-  padding: 10px 15px;
-  background-color: #4285f4;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-`;
-
 const AddTask = () => {
   const [addtak, setAddtask] = useState([]);
   const [taskdescription, setTaskdescription] = useState("");
   const [taskname, setTaskname] = useState("");
   const [taskpriority, setTaskpriority] = useState("");
+  const [taskstatus, setTaskStatus] = useState("");
+  const navigator = useNavigate();
 
   async function createTask() {
     const sendTask = await addDoc(userCollectionRef, {
@@ -65,6 +38,9 @@ const AddTask = () => {
     setTaskpriority("");
   }
 
+  const returnTask = () => {
+    navigator("/task");
+  };
   const isFormValid = () => {
     return taskdescription !== "" && taskname !== "" && taskpriority !== "";
   };
@@ -90,12 +66,19 @@ const AddTask = () => {
 
   return (
     <FormWrapper>
+      <Button onClick={returnTask}>Voltar</Button>
       <FormLabel>Nome da Task</FormLabel>
       <FormInput
         type="text"
         value={taskname}
         onChange={(e) => setTaskname(e.target.value)}
         required
+      />
+      <FormLabel> Task Status</FormLabel>
+      <FormInput
+        type="text"
+        value={taskstatus}
+        onChange={(e) => setTaskStatus(e.target.value)}
       />
       <FormLabel>Descrição da Task</FormLabel>
       <FormInput
@@ -117,7 +100,7 @@ const AddTask = () => {
         <option value="intermediate">Intermediate</option>
         <option value="high">High</option>
       </FormSelect>
-      <FormButton onClick={handleSubmit}>Criar Task</FormButton>
+      <Button onClick={handleSubmit}>Criar Task</Button>
     </FormWrapper>
   );
 };

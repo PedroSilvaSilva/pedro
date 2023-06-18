@@ -1,13 +1,11 @@
 import React from "react";
-
+import DashboardFirebase from "../../firebase/dashboard/dashboard.firebase";
 import { Sidebar } from "_components/molecules";
 import {
   ContairnerGeral,
   Container,
   SideBar,
 } from "../dashboard/dashboard.style";
-
-import DashboardFirebase from "./dashboard.firebase";
 
 const Layout = () => {
   return (

@@ -6,6 +6,7 @@
       "_assets/*": ["./src/assets/*"],
       "_components/*": ["./src/components/*"],
       "_data/*": ["./src/data/*"],
+      "_firebase/*": ["./src/firebase/*"],
       "_pages/*": ["./src/pages/*"],
       "_store/*": ["./src/store/*"],
       "_theme/*": ["./src/theme/*"],

@@ -10,7 +10,7 @@ const Toolbar = () => {
   return (
     <div>
       <ToolbarWrapper>
-        <img src={logo} alt="" />
+        <img src={logo} alt="Logo" />
         <Link>
           <IoMdNotifications size={30} color="#273E47" />
         </Link>

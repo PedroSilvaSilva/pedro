@@ -1,28 +1,16 @@
 import React from "react";
 
+import TaskConfig from "../../firebase/tasks/task.firebase";
+
 import { Sidebar } from "_components/molecules";
-import { styled } from "styled-components";
-import { ContainerMenu } from "./task.style";
-import TaskConfig from "./task.firebase";
-import Toolbar from "_components/molecules/toolbar/tolbar";
-
-const ContairnerGeral = styled.div`
-  height: 100vh;
-  width: 100%;
-  display: flex;
-
-  background-color: #f2f2f2;
-`;
-const Container = styled.div`
-  background-color: #f2f2f2;
-`;
+import { ContairnerGeral, Container } from "../../pages/task/task.style";
 
 const Task = () => {
   return (
     <ContairnerGeral>
-      <div>
+      <article>
         <Sidebar />
-      </div>
+      </article>
       <Container>
         <TaskConfig />
       </Container>

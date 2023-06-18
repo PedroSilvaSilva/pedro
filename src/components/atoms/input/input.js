@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { InputWrapper, InputStyled } from "./input.style";
-import { AiOutlineSearch } from "react-icons/ai";
+
 const Input = (props) => {
   const [type, setType] = useState(props.type ?? "text");
 

@@ -1,28 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { initializeApp } from "firebase/app";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   getFirestore,
   getDocs,
   collection,
   updateDoc,
   doc,
+  deleteDoc,
 } from "firebase/firestore";
 import {
+  ModalButton,
+  Description2,
   ToolbarWrapper,
   ToolbarButton,
   Card,
   Title,
   Input,
   Description,
-  Button,
-  Card2,
   ContainerCard,
   ContainerMenu,
-  ContainerImge,
-  ContairnerGeral,
-  Container,
-  SideBar,
   Modal,
   ModalContent,
   ModalHeader,
@@ -33,10 +30,11 @@ import {
   Input2,
   PaginationWrapper,
   PaginationButton,
+  Description3,
 } from "./task.style";
-
+import { GoArrowRight } from "react-icons/go";
 import Toolbar from "_components/molecules/toolbar/tolbar";
-
+import Button from "_components/atoms/button/button";
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyA1i2tFg43acxCVK9X3fFFVM042qPRDVnw",
   authDomain: "projecto-971ef.firebaseapp.com",
@@ -85,7 +83,7 @@ const TaskConfig = () => {
   const [searchValue, setSearchValue] = useState("");
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
-  const tasksPerPage = 20;
+  const tasksPerPage = 10;
   const db = getFirestore(firebaseApp);
   const userCollectionRef = collection(db, "tasks");
 
@@ -155,6 +153,19 @@ const TaskConfig = () => {
     );
   };
 
+  const deleteTask = async (taskId) => {
+    if (window.confirm("Are you sure you want to delete this task?")) {
+      try {
+        await deleteDoc(doc(db, "tasks", taskId));
+        setFilteredUsers((prevState) =>
+          prevState.filter((task) => task.id !== taskId)
+        );
+      } catch (error) {
+        console.error("Error deleting task: ", error);
+      }
+    }
+  };
+
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
@@ -208,18 +219,23 @@ const TaskConfig = () => {
       <ContainerCard>
         {currentTasks.map((val) => (
           <Card key={val.id}>
-            <Title>
-              {val.taskname.length > 15
-                ? val.taskname.substring(0, 15) + "..."
-                : val.taskname}
-            </Title>
-            <Description>
-              {val.taskdescription.length > 20
-                ? val.taskdescription.substring(0, 20) + "..."
+            <Description3>
+              <Title>
+                {val.taskname.length > 10
+                  ? val.taskname.substring(0, 10) + "..."
+                  : val.taskname}
+              </Title>
+              <Description>{val.status}</Description>
+            </Description3>
+
+            <Description2>
+              {val.taskdescription.length > 15
+                ? val.taskdescription.substring(0, 15) + "..."
                 : val.taskdescription}
-            </Description>
-            <Description>Priority: {val.taskpriority}</Description>
-            <Button onClick={() => startEditing(val)}>Edit Task</Button>
+            </Description2>
+            <Link className="link" onClick={() => startEditing(val)}>
+              View Task <GoArrowRight size={16} />
+            </Link>
           </Card>
         ))}
       </ContainerCard>
@@ -276,8 +292,13 @@ const TaskConfig = () => {
                     })
                   }
                 />
-                <Button onClick={() => saveTask(editingTask)}>Save</Button>
-                <Button onClick={cancelEditing}>Cancel</Button>
+                <ModalButton>
+                  <Button onClick={() => deleteTask(editingTask.id)}>
+                    Delete Task
+                  </Button>
+                  <Button onClick={() => saveTask(editingTask)}>Save</Button>
+                  <Button onClick={cancelEditing}>Cancel</Button>
+                </ModalButton>
               </Card3>
             </ModalBody>
           </ModalContent>

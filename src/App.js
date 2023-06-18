@@ -15,16 +15,16 @@ import Profile from "_pages/profile/profile";
 import Dashboard from "_pages/dashboard/dashboard";
 import Createaccount from "_pages/createaccount/createaccount";
 import Task from "_pages/task/task";
-import Overview from "_pages/overview";
-import TermsAndConditions from "_pages/terms/terms";
+
 import ResetPasswordForm from "_pages/forget/forget";
 
 import GlobalStyle from "_theme/globalstyles";
 import theme from "_theme/theme";
 
 import store from "_store/store";
-import AddTask from "_pages/task/addtask";
+import AddTask from "_pages/addtask/addtask";
 import Toolbar from "_components/molecules/toolbar/tolbar";
+import EdittaskFirebase from "_firebase/edittask/edittask.firebase";
 
 export const ThemeContext = createContext(null);
 
@@ -44,17 +44,16 @@ const App = () => {
             {/* <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} /> */}
             <Routes>
               <Route path="/" element={<Navigate to="/login" />} />
-              <Route path="/terms" element={<TermsAndConditions />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/task" element={<Task />} />
               <Route path="/tolbar" element={<Toolbar />} />
               <Route path="/addtask" element={<AddTask />} />
-              <Route path="/overview" element={<Overview />} />
               <Route path="/welcome" element={<Welcome />} />
               <Route path="/login" element={<Login />} />
               <Route path="/createaccount" element={<Createaccount />} />
               <Route path="/forget" element={<ResetPasswordForm />} />
+              <Route path="/edittask" element={<EdittaskFirebase />} />
             </Routes>
           </ThemeContext.Provider>
         </Router>

@@ -4,7 +4,6 @@ import overlay_3 from "_assets/images/overlay_3.jpg";
 import logo from "_assets/images/logo.png";
 import { GiFrankensteinCreature } from "react-icons/gi";
 import {
-  Button,
   ErrorMessage,
   Input,
   Fieldset,
@@ -15,6 +14,7 @@ import {
   Section,
 } from "./createaccount.style";
 import { Link, useNavigate } from "react-router-dom";
+import { Button } from "_components/atoms";
 
 const Createaccount = () => {
   const [email, setEmail] = useState("");
@@ -88,7 +88,7 @@ const Createaccount = () => {
         </Form>
       </LoginContainer>
 
-      <img className="imagem" src={overlay_3} alt="" />
+      <img className="imagem" src={overlay_3} alt="Logo" />
     </Section>
   );
 };

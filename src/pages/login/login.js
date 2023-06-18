@@ -7,7 +7,6 @@ import logo from "_assets/images/logo.png";
 import { useLogin } from "./login.handlers";
 import { BsDatabaseFillDash } from "react-icons/bs";
 import {
-  Button,
   ForgotPasswordLink,
   ErrorMessage,
   Input,
@@ -18,6 +17,7 @@ import {
   LoginContainer,
   Section,
 } from "../login/login.style";
+import { Button } from "_components/atoms";
 
 const Login = () => {
   const {

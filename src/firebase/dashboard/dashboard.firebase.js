@@ -14,7 +14,7 @@ import {
   ContainerCard,
   ContainerMenu,
   ContainerImge,
-} from "../dashboard/dashboard.style";
+} from "../../firebase/dashboard/dashboard.styles";
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyA1i2tFg43acxCVK9X3fFFVM042qPRDVnw",

@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
 import Toolbar from "../toolbar/tolbar";
-import Carrossel from "_components/carrossel/carrossel";
+
 import { useNavigate } from "react-router-dom";
 
 const Card = styled.div`
@@ -33,7 +33,6 @@ const Card2 = styled.div`
 
 const Card3 = styled.div`
   background: #fcf6ee;
-
   border-radius: 15px;
   box-shadow: #d8e9e6 16px 16px 32px, rgba(0, 0, 0, 0.12) 0px -16px 32px,
     rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
@@ -138,9 +137,7 @@ const CardDashboard = () => {
           </ContainerImge>
           <Button onClick={handlenavigate}> Go Now </Button>
         </Card>
-        <Card2>
-          <Carrossel />
-        </Card2>
+        <Card2></Card2>
         <Card3>
           <Title>Total Active Users</Title>
           <Description> +2.6%</Description>

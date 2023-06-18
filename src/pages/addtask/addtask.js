@@ -49,7 +49,7 @@ const FormButton = styled.button`
 `;
 
 const AddTask = () => {
-  const [user, setUsers] = useState([]);
+  const [addtak, setAddtask] = useState([]);
   const [taskdescription, setTaskdescription] = useState("");
   const [taskname, setTaskname] = useState("");
   const [taskpriority, setTaskpriority] = useState("");
@@ -83,7 +83,7 @@ const AddTask = () => {
     const getUsers = async () => {
       const data = await getDocs(userCollectionRef);
       console.log(data.docs.map((docs) => ({ ...docs.data(), id: docs.id })));
-      setUsers(data.docs.map((docs) => ({ ...docs.data(), id: docs.id })));
+      setAddtask(data.docs.map((docs) => ({ ...docs.data(), id: docs.id })));
     };
     getUsers();
   }, []);

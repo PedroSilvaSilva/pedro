@@ -11,15 +11,17 @@ import {
 
 const Task = () => {
   return (
-    <ContairnerGeral>
-      <ContainerMobile>
-        <Sidebar />
-      </ContainerMobile>
-      <Container>
-        <TaskConfig />
-      </Container>
+    <>
+      <ContairnerGeral>
+        <ContainerMobile>
+          <Sidebar />
+        </ContainerMobile>
+        <Container>
+          <TaskConfig />
+        </Container>
+      </ContairnerGeral>
       <Footer />
-    </ContairnerGeral>
+    </>
   );
 };
 

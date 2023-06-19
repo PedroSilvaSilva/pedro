@@ -6,7 +6,7 @@ import {
   Container,
   SideBar,
 } from "../dashboard/dashboard.style";
-
+import Footer from "_components/molecules/footer/footer";
 const Layout = () => {
   return (
     <>
@@ -18,6 +18,7 @@ const Layout = () => {
           <DashboardFirebase />
         </Container>
       </ContairnerGeral>
+      <Footer />
     </>
   );
 };

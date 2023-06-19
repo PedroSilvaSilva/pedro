@@ -18,7 +18,6 @@ const Container = styled.article`
   background-color: #f2f2f2;
   display: flex;
   justify-content: center;
-  height: 100vh;
 `;
 
 const ContainerMobile = styled.article`

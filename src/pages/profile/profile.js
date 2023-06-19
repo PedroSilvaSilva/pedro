@@ -15,8 +15,8 @@ const Profile = () => {
         <Container>
           <ProfileFireBase />
         </Container>
-        <Footer />
       </ContairnerGeral>
+      <Footer />
     </>
   );
 };

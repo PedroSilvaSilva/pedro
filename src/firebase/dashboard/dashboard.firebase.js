@@ -14,7 +14,6 @@ import {
 } from "../../firebase/dashboard/dashboard.styles";
 import { Button } from "_components/atoms";
 import { CardContainer } from "_firebase/cards/card.style";
-import Footer from "_components/molecules/footer/footer";
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyA1i2tFg43acxCVK9X3fFFVM042qPRDVnw",
@@ -80,7 +79,6 @@ const DashboardFirebase = () => {
             <Button onClick={handlenavigate}> See More... </Button>
           </CardContainer>
         ))}
-        <Footer />
       </ContainerGeral>
     </>
   );

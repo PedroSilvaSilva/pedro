@@ -7,13 +7,14 @@ const ContainerGeral = styled.section`
   gap: 10px;
   margin-bottom: 10px;
 
-  @media (max-width: 650px) {
+  @media (max-width: 650px), (max-width: 950px), (max-width: 1133px) {
     display: flex;
     flex-direction: column;
     gap: 10px;
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: auto;
   }
 `;
 

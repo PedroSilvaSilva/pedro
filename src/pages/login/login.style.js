@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-const Section = styled.section`
+const ContainerGeral = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +22,7 @@ const Section = styled.section`
   }
 `;
 
-const LoginContainer = styled.div`
+const LoginContainer = styled.article`
   background-color: white;
   border-radius: 8px;
   padding: 40px;
@@ -98,28 +98,7 @@ const ForgotPasswordLink = styled.span`
   }
 `;
 
-const Button = styled.button`
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: #0056b3;
-  }
-
-  &:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-`;
-
 export {
-  Button,
   ForgotPasswordLink,
   ErrorMessage,
   Input,
@@ -128,5 +107,5 @@ export {
   NewUserText,
   LoginTitle,
   LoginContainer,
-  Section,
+  ContainerGeral,
 };

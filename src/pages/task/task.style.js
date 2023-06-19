@@ -4,6 +4,15 @@ const ContairnerGeral = styled.section`
   width: 100%;
   display: flex;
   background-color: #f2f2f2;
+
+  @media (max-width: 1133px), (max-width: 986px), (max-width: 853px) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 `;
 const Container = styled.article`
   background-color: #f2f2f2;
@@ -12,4 +21,10 @@ const Container = styled.article`
   height: 100vh;
 `;
 
-export { ContairnerGeral, Container };
+const ContainerMobile = styled.article`
+  @media (max-width: 1133px) {
+    display: none;
+  }
+`;
+
+export { ContairnerGeral, Container, ContainerMobile };

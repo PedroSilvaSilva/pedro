@@ -12,12 +12,8 @@ const ContainerBar = styled.section`
   flex-direction: column;
   justify-content: center;
   gap: 50px;
-  transform: ${({ isOpen }) =>
-    isOpen ? "translateX(0)" : "translateX(-100%)"};
-  #close {
-    display: none;
-  }
-  #open {
+
+  @media (max-width: 1130px) {
     display: none;
   }
 `;

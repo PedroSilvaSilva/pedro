@@ -1,19 +1,24 @@
 import React from "react";
 
 import TaskConfig from "../../firebase/tasks/task.firebase";
-
+import Footer from "_components/molecules/footer/footer";
 import { Sidebar } from "_components/molecules";
-import { ContairnerGeral, Container } from "../../pages/task/task.style";
+import {
+  ContairnerGeral,
+  Container,
+  ContainerMobile,
+} from "../../pages/task/task.style";
 
 const Task = () => {
   return (
     <ContairnerGeral>
-      <article>
+      <ContainerMobile>
         <Sidebar />
-      </article>
+      </ContainerMobile>
       <Container>
         <TaskConfig />
       </Container>
+      <Footer />
     </ContairnerGeral>
   );
 };

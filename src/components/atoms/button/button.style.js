@@ -15,6 +15,13 @@ const ButtonContainer = styled.button`
       padding: 8px 16px;
       font-size: 14px;
     `}
+  ${(props) =>
+    props.size === "moresmall" &&
+    css`
+      width: 70px;
+      padding: 6px 10px;
+      font-size: 14px;
+    `}
 
   ${(props) =>
     props.color &&

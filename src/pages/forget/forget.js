@@ -7,7 +7,7 @@ import {
   Title,
   Card,
 } from "../forget/foget.style";
-
+import logo from "_assets/images/logo.png";
 import { Button } from "_components/atoms";
 
 const ResetPasswordForm = () => {
@@ -39,6 +39,7 @@ const ResetPasswordForm = () => {
   return (
     <Container>
       <Card>
+        <img src={logo} alt="logo" />
         <Title>Recover Password</Title>
         <Description>
           Please enter your email address below. We will send you a link to

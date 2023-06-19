@@ -6,15 +6,15 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Toolbar from "../../components/molecules/toolbar/tolbar";
 import {
-  Card,
   Title,
   Description,
-  Button,
-  Card2,
-  ContainerCard,
+  ContainerGeral,
   ContainerMenu,
   ContainerImge,
 } from "../../firebase/dashboard/dashboard.styles";
+import { Button } from "_components/atoms";
+import { CardContainer } from "_firebase/cards/card.style";
+import Footer from "_components/molecules/footer/footer";
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyA1i2tFg43acxCVK9X3fFFVM042qPRDVnw",
@@ -36,7 +36,7 @@ const DashboardFirebase = () => {
   useEffect(() => {
     const getUsers = async () => {
       const data = await getDocs(userCollectionRef);
-      console.log(data.docs.map((docs) => ({ ...docs.data(), id: docs.id })));
+
       setUsers(data.docs.map((docs) => ({ ...docs.data(), id: docs.id })));
     };
     getUsers();
@@ -45,41 +45,44 @@ const DashboardFirebase = () => {
   useEffect(() => {
     const getUsers = async () => {
       const data = await getDocs(userCollectionRefusers);
-      console.log(data.docs.map((docs) => ({ ...docs.data(), id: docs.id })));
+
       setUserss(data.docs.map((docs) => ({ ...docs.data(), id: docs.id })));
     };
     getUsers();
   }, []);
 
   return (
-    <ContainerCard>
-      <ContainerMenu>
-        <Toolbar />
-      </ContainerMenu>
+    <>
+      <ContainerGeral>
+        <ContainerMenu>
+          <Toolbar />
+        </ContainerMenu>
 
-      {users.map((val) => (
-        <Card2 key={val.id}>
-          <Title>Welcome back 👋 {val.name} </Title>
-          <Description>{val.description}</Description>
+        {users.map((val) => (
+          <CardContainer key={val.id} width="1320px" height="400px">
+            <Title>Welcome back 👋 {val.name} </Title>
+            <Description>{val.description}</Description>
 
-          <ContainerImge>
-            <img src={val.image} />
-          </ContainerImge>
-          <Button onClick={handlenavigate}> Go Now </Button>
-        </Card2>
-      ))}
+            <ContainerImge>
+              <img src={val.image} alt="Logo" />
+            </ContainerImge>
+            <Button onClick={handlenavigate}> Go Now </Button>
+          </CardContainer>
+        ))}
 
-      {user.map((val) => (
-        <Card key={val.id}>
-          <Title>{val.title}</Title>
-          <ContainerImge>
-            <img src={val.image} />
-          </ContainerImge>
-          <Description>{val.description}</Description>
-          <Button>See more...</Button>
-        </Card>
-      ))}
-    </ContainerCard>
+        {user.map((val) => (
+          <CardContainer key={val.id}>
+            <Title>{val.title}</Title>
+            <ContainerImge>
+              <img src={val.image} />
+            </ContainerImge>
+            <Description>{val.description}</Description>
+            <Button onClick={handlenavigate}> See More... </Button>
+          </CardContainer>
+        ))}
+        <Footer />
+      </ContainerGeral>
+    </>
   );
 };
 

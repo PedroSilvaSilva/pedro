@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import overlay_3 from "_assets/images/overlay_3.jpg";
 import logo from "_assets/images/logo.png";
 import { useLogin } from "./login.handlers";
-import { BsDatabaseFillDash } from "react-icons/bs";
+
 import {
   ForgotPasswordLink,
   ErrorMessage,
@@ -15,10 +15,10 @@ import {
   NewUserText,
   LoginTitle,
   LoginContainer,
-  Section,
+  ContainerGeral,
 } from "../login/login.style";
 import { Button } from "_components/atoms";
-
+import { BsDatabaseFillDash } from "react-icons/bs";
 const Login = () => {
   const {
     email,
@@ -31,7 +31,7 @@ const Login = () => {
   } = useLogin();
 
   return (
-    <Section>
+    <ContainerGeral>
       <LoginContainer>
         <img src={logo} alt="logo" />
         <BsDatabaseFillDash size={52} />
@@ -78,7 +78,7 @@ const Login = () => {
         </Form>
       </LoginContainer>
       <img className="imagem" src={overlay_3} alt="" />
-    </Section>
+    </ContainerGeral>
   );
 };
 

@@ -28,3 +28,28 @@ export const Sidebardata = [
     link: "/login",
   },
 ];
+
+export const SidebardataFooter = [
+  {
+    title: "Dashboard",
+    icon: <AiOutlineHome size={35} />,
+    link: "/dashboard",
+  },
+
+  {
+    title: "Task",
+    icon: <BsListTask size={35} />,
+    link: "/task",
+  },
+
+  {
+    title: "Profile",
+    icon: <ImProfile size={35} />,
+    link: "/profile",
+  },
+  {
+    title: "Log Out",
+    icon: <BiLogOut size={35} />,
+    link: "/login",
+  },
+];

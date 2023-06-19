@@ -1,32 +1,24 @@
 import React from "react";
-
+import ProfileFireBase from "../../firebase/profile/profile.firebase";
 import { Sidebar } from "_components/molecules";
-import { styled } from "styled-components";
+import { ContairnerGeral, Container, SideBar } from "../profile/profile.styles";
 
-import CardDashboard from "_components/molecules/card/card";
+import Footer from "_components/molecules/footer/footer";
 
-const ContairnerGeral = styled.div`
-  height: 100vh;
-  width: 100%;
-  display: flex;
-
-  background-color: #f2f2f2;
-`;
-const Container = styled.div`
-  background-color: #f2f2f2;
-`;
-
-const Layout = () => {
+const Profile = () => {
   return (
-    <ContairnerGeral>
-      <div>
-        <Sidebar />
-      </div>
-      <Container>
-        <CardDashboard />
-      </Container>
-    </ContairnerGeral>
+    <>
+      <ContairnerGeral>
+        <SideBar>
+          <Sidebar />
+        </SideBar>
+        <Container>
+          <ProfileFireBase />
+        </Container>
+        <Footer />
+      </ContairnerGeral>
+    </>
   );
 };
 
-export default Layout;
+export default Profile;

@@ -6,6 +6,7 @@ const Container = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 15px;
 `;
 
 const Input = styled.input`

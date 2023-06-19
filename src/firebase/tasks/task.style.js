@@ -1,28 +1,4 @@
 import { styled } from "styled-components";
-const Card = styled.article`
-  background: #fcf6ee;
-  border-radius: 15px;
-  box-shadow: #d8e9e6 16px 16px 32px, rgba(0, 0, 0, 0.12) 0px -16px 32px,
-    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
-    rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  padding: 3px;
-  width: 290px;
-  height: 150px;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
-  .link {
-    font-size: 8px;
-    display: flex;
-    font-weight: 200;
-    align-items: center;
-  }
-  @media (max-width: 750px) {
-    width: 350px;
-    height: 250px;
-  }
-`;
 
 const Title = styled.h2`
   font-size: 20px;
@@ -33,9 +9,12 @@ const Title = styled.h2`
 `;
 
 const Description = styled.p`
-  font-size: 20px;
+  font-size: 15px;
   margin-bottom: 16px;
   color: black;
+  padding: 2.5px;
+  border: 3px solid #1d555e;
+  border-radius: 15px;
 `;
 const Description2 = styled.p`
   font-size: 16px;
@@ -50,65 +29,21 @@ const Description3 = styled.p`
   justify-content: space-between;
 `;
 
-// const Button = styled.button`
-//   background-color: #1d555e;
-//   color: #ffffff;
-//   border: none;
-//   width: 150px;
-//   border-radius: 4px;
-//   padding: 8px 16px;
-//   font-size: 14px;
-//   cursor: pointer;
-
-//   &:hover {
-//     background-color: #1d555e;
-//   }
-// `;
-
-const Card2 = styled.div`
-  background: #fcf6ee;
-  border-radius: 15px;
-  box-shadow: #d8e9e6 16px 16px 32px, rgba(0, 0, 0, 0.12) 0px -16px 32px,
-    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
-    rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  width: 1320px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 16px;
-`;
-const Card3 = styled.div`
-  background: #fcf6ee;
-  border-radius: 15px;
-  box-shadow: #d8e9e6 16px 16px 32px, rgba(0, 0, 0, 0.12) 0px -16px 32px,
-    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
-    rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  width: 1320px;
-  height: 750px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 16px;
-`;
-
 const ContainerCard = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+
   gap: 10px;
-  margin-bottom: 10px;
+  margin-top: 80px;
 `;
 const ContainerMenu = styled.div`
-  border-bottom: 3px solid #d0d0d0;
-  width: 100%;
   height: 100px;
-  text-align: end;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: end;
 `;
 
 const ContainerImge = styled.div`
@@ -141,6 +76,14 @@ const ToolbarWrapper = styled.div`
   padding: 10px;
   width: 100%;
   gap: 15px;
+  @media (max-width: 1133px) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 `;
 
 const ToolbarButton = styled.button`
@@ -172,7 +115,6 @@ const Modal = styled.div`
 const ModalContent = styled.div`
   background-color: #fff;
   width: 1500px;
-
   padding: 20px;
   border-radius: 4px;
 `;
@@ -202,7 +144,7 @@ const ModalBody = styled.div`
   font-size: 14px;
   line-height: 1.5;
   color: #333;
-  background-color: #f0f0f0;
+  background-color: transparent;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -215,10 +157,18 @@ const ModalButton = styled.div`
   align-items: center;
   justify-content: center;
   gap: 25px;
+  margin-top: 80px;
+  @media (max-width: 1133px) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const Input = styled.input`
-  width: 100%;
+  width: 70%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -244,15 +194,31 @@ const PaginationButton = styled.button`
   border: 1px solid #ccc;
   cursor: pointer;
 `;
+
+const FormSelect = styled.select`
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+`;
+
+const ConatinerBio = styled.textarea`
+  height: 350px;
+  @media (max-width: 1133px) {
+  }
+`;
+
+const ConatinerMobile = styled.div``;
+
 export {
+  ConatinerBio,
+  ConatinerMobile,
   ModalButton,
   PaginationWrapper,
   PaginationButton,
   Input,
-  Card,
   Title,
   Description,
-  Card2,
   ContainerCard,
   ContainerMenu,
   ContainerImge,
@@ -267,8 +233,8 @@ export {
   ModalTitle,
   ModalCloseButton,
   ModalBody,
-  Card3,
   Input2,
   Description2,
   Description3,
+  FormSelect,
 };

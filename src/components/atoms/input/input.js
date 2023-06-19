@@ -1,32 +1,8 @@
-import React, { useState } from "react";
-import { InputWrapper, InputStyled } from "./input.style";
+import React from "react";
+import { InputContainer } from "../input/input.style";
 
-const Input = (props) => {
-  const [type, setType] = useState(props.type ?? "text");
-
-  if (props.type === "password") {
-    return (
-      <InputWrapper>
-        <InputStyled {...props} type={type} />
-        {/* <button
-          type="button"
-          onClick={() =>
-            setType((currentValue) =>
-              currentValue === "password" ? "text" : "password"
-            )
-          }
-        >
-          <AiOutlineSearch />
-        </button> */}
-      </InputWrapper>
-    );
-  }
-
-  return (
-    <InputWrapper>
-      <InputStyled {...props} type={type} />
-    </InputWrapper>
-  );
+const Input = ({ size, color, ...rest }) => {
+  return <InputContainer size={size} color={color} {...rest} />;
 };
 
 export default Input;

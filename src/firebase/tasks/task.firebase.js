@@ -10,14 +10,15 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import {
+  ConatinerBio,
+  ConatinerMobile,
+  FormSelect,
   ModalButton,
   Description2,
   ToolbarWrapper,
   ToolbarButton,
-  Card,
   Title,
   Input,
-  Description,
   ContainerCard,
   ContainerMenu,
   Modal,
@@ -26,7 +27,6 @@ import {
   ModalTitle,
   ModalCloseButton,
   ModalBody,
-  Card3,
   Input2,
   PaginationWrapper,
   PaginationButton,
@@ -35,6 +35,8 @@ import {
 import { GoArrowRight } from "react-icons/go";
 import Toolbar from "_components/molecules/toolbar/tolbar";
 import Button from "_components/atoms/button/button";
+import { CardContainer } from "_firebase/cards/card.style";
+
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyA1i2tFg43acxCVK9X3fFFVM042qPRDVnw",
   authDomain: "projecto-971ef.firebaseapp.com",
@@ -175,7 +177,7 @@ const TaskConfig = () => {
   const currentTasks = filteredUsers.slice(indexOfFirstTask, indexOfLastTask);
 
   return (
-    <div>
+    <ConatinerMobile>
       <ContainerMenu>
         <Toolbar />
       </ContainerMenu>
@@ -218,14 +220,13 @@ const TaskConfig = () => {
 
       <ContainerCard>
         {currentTasks.map((val) => (
-          <Card key={val.id}>
+          <CardContainer width="290px" height="150px" key={val.id}>
             <Description3>
               <Title>
                 {val.taskname.length > 10
                   ? val.taskname.substring(0, 10) + "..."
                   : val.taskname}
               </Title>
-              <Description>{val.status}</Description>
             </Description3>
 
             <Description2>
@@ -236,7 +237,7 @@ const TaskConfig = () => {
             <Link className="link" onClick={() => startEditing(val)}>
               Work On Task <GoArrowRight size={16} />
             </Link>
-          </Card>
+          </CardContainer>
         ))}
       </ContainerCard>
       {filteredUsers.length > tasksPerPage && (
@@ -258,7 +259,12 @@ const TaskConfig = () => {
               </ModalCloseButton>
             </ModalHeader>
             <ModalBody>
-              <Card3>
+              <CardContainer
+                boxShadow="transparent"
+                backgroundColor="transparent"
+                width="1000px"
+                height="450px"
+              >
                 <Title>Task Name</Title>
                 <Input
                   type="text"
@@ -270,19 +276,9 @@ const TaskConfig = () => {
                     })
                   }
                 />
-                <Title>Description</Title>
-                <Input
-                  type="text"
-                  value={editingTask.taskdescription}
-                  onChange={(e) =>
-                    setEditingTask({
-                      ...editingTask,
-                      taskdescription: e.target.value,
-                    })
-                  }
-                />
+
                 <Title>Priority</Title>
-                <select>
+                <FormSelect>
                   <Input
                     type="text"
                     value={editingTask.taskpriority}
@@ -297,20 +293,49 @@ const TaskConfig = () => {
                   <option value="high">High</option>
                   <option value="intermediate">Intermediate</option>
                   <option value="normal">Normal</option>
-                </select>
+                </FormSelect>
+                <Title>Status</Title>
+                <FormSelect>
+                  <Input
+                    type="text"
+                    value={editingTask.taskpriority}
+                    onChange={(e) =>
+                      setEditingTask({
+                        ...editingTask,
+                        taskpriority: e.target.value,
+                      })
+                    }
+                  />
+                  <option value="">Escolha o status da task</option>
+                  <option value="high">Pending</option>
+                  <option value="intermediate">Incompleted</option>
+                  <option value="normal">Completed</option>
+                </FormSelect>
+                <Title>Description</Title>
+                <ConatinerBio
+                  value={editingTask.taskdescription}
+                  rows={7}
+                  cols={70}
+                  onChange={(e) =>
+                    setEditingTask({
+                      ...editingTask,
+                      taskdescription: e.target.value,
+                    })
+                  }
+                ></ConatinerBio>
                 <ModalButton>
+                  <Button onClick={() => saveTask(editingTask)}>Save</Button>
+                  <Button onClick={cancelEditing}>Cancel</Button>
                   <Button onClick={() => deleteTask(editingTask.id)}>
                     Delete Task
                   </Button>
-                  <Button onClick={() => saveTask(editingTask)}>Save</Button>
-                  <Button onClick={cancelEditing}>Cancel</Button>
                 </ModalButton>
-              </Card3>
+              </CardContainer>
             </ModalBody>
           </ModalContent>
         </Modal>
       )}
-    </div>
+    </ConatinerMobile>
   );
 };
 

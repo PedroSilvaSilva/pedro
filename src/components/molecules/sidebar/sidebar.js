@@ -1,19 +1,11 @@
 import React, { useState } from "react";
-import { Sidebardata } from "./sidebardata";
+import { Sidebardata } from "../../../data/sidebardata";
 import { ContainerBar, ContainerHeader, ContainerLi } from "./sidebar.style";
-import { Button } from "_components/atoms";
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
     <>
-      <Button onClick={toggleSidebar}>Toggle Sidebar</Button>
-      <ContainerBar isOpen={!isOpen}>
+      <ContainerBar>
         {Sidebardata.map((val, key) => {
           return (
             <ContainerHeader key={key}>

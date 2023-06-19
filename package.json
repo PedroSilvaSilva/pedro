@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
     "buffer": "^6.0.3",
+    "chart.js": "^3.5.1",
     "craco": "^0.0.3",
     "firebase": "^9.22.0",
     "h": "^1.0.0",

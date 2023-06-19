@@ -13,7 +13,7 @@ import {
   ContainerImge,
 } from "../../firebase/dashboard/dashboard.styles";
 import { Button } from "_components/atoms";
-import { CardContainer } from "_firebase/cards/card.style";
+import { CardContainer } from "_components/molecules/footer/cards/card.style";
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyA1i2tFg43acxCVK9X3fFFVM042qPRDVnw",

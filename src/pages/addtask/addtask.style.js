@@ -40,13 +40,4 @@ const FormSelect = styled.select`
   width: 100%;
 `;
 
-const FormButton = styled.button`
-  padding: 10px 15px;
-  background-color: #4285f4;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-`;
-
-export { FormButton, FormSelect, FormInput, FormLabel, FormWrapper };
+export { FormSelect, FormInput, FormLabel, FormWrapper };

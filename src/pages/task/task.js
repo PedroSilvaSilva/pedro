@@ -7,7 +7,7 @@ import {
   ContairnerGeral,
   Container,
   ContainerMobile,
-} from "../../pages/task/task.style";
+} from "_pages/task/task.style";
 
 const Task = () => {
   return (

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import overlay_3 from "_assets/images/overlay_3.jpg";
 import logo from "_assets/images/logo.png";
 import { GiFrankensteinCreature } from "react-icons/gi";
@@ -13,18 +14,13 @@ import {
   LoginContainer,
   Section,
 } from "./createaccount.style";
-import { Link, useNavigate } from "react-router-dom";
+
 import { Button } from "_components/atoms";
 
 const Createaccount = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const navigate = useNavigate();
-
-  const handleCreateAccount = () => {
-    navigate("/login");
-  };
 
   const handleLogin = (e) => {
     e.preventDefault();

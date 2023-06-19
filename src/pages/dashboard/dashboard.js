@@ -5,7 +5,7 @@ import {
   ContairnerGeral,
   Container,
   SideBar,
-} from "../dashboard/dashboard.style";
+} from "_pages/dashboard/dashboard.style";
 import Footer from "_components/molecules/footer/footer";
 const Layout = () => {
   return (

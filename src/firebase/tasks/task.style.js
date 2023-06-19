@@ -167,20 +167,6 @@ const ModalButton = styled.div`
   }
 `;
 
-const Input = styled.input`
-  width: 70%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-`;
-const Input2 = styled.input`
-  width: 45%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-`;
 const PaginationWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -216,7 +202,6 @@ export {
   ModalButton,
   PaginationWrapper,
   PaginationButton,
-  Input,
   Title,
   Description,
   ContainerCard,
@@ -233,7 +218,6 @@ export {
   ModalTitle,
   ModalCloseButton,
   ModalBody,
-  Input2,
   Description2,
   Description3,
   FormSelect,

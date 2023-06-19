@@ -6,7 +6,7 @@ import {
   Description,
   Title,
   Card,
-} from "../forget/foget.style";
+} from "_pages/forget/foget.style";
 import logo from "_assets/images/logo.png";
 import { Button } from "_components/atoms";
 

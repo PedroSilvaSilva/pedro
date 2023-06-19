@@ -14,6 +14,11 @@ const ContainerGeral = styled.section`
     justify-content: center;
     align-items: center;
     width: 100%;
+    h2,
+    h1,
+    p {
+      font-size: 15px;
+    }
   }
 `;
 

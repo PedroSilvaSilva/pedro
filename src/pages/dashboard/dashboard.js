@@ -1,29 +1,25 @@
 import React from "react";
-import Calendar from "react-calendar";
-
-import { Sidebar, Card, User } from "_components/molecules";
-
-import Header from "../../components/organisms/header/header";
-
-import { ContainerMain } from "./dashboard.style";
-
+import DashboardFirebase from "../../firebase/dashboard/dashboard.firebase";
+import { Sidebar } from "_components/molecules";
+import {
+  ContairnerGeral,
+  Container,
+  SideBar,
+} from "../dashboard/dashboard.style";
+import Footer from "_components/molecules/footer/footer";
 const Layout = () => {
   return (
-    <ContainerMain className="container">
-      <main>
-        <Header />
-      </main>
-      <div id="sidebar">
-        <Sidebar />
-      </div>
-      <div id="content1">
-        <User />
-        <Calendar />
-      </div>
-      <div id="content2">
-        <Card />
-      </div>
-    </ContainerMain>
+    <>
+      <ContairnerGeral>
+        <SideBar>
+          <Sidebar />
+        </SideBar>
+        <Container>
+          <DashboardFirebase />
+        </Container>
+      </ContairnerGeral>
+      <Footer />
+    </>
   );
 };
 

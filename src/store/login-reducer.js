@@ -21,8 +21,7 @@ const loginReducer = (state = initialState, action) => {
     case LOGIN_SUCCESS:
       return {
         ...state,
-        email: "",
-        password: "",
+
         error: "",
       };
     case LOGIN_FAILURE:

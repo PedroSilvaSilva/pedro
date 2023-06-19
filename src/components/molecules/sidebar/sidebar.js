@@ -1,19 +1,15 @@
-import React from "react";
-import { Sidebardata } from "./sidebardata";
-import { ContainerBar, ContainerHeader, ContainerLogo } from "./sidebar.style";
-import { GiHamburgerMenu } from "react-icons/gi";
+import React, { useState } from "react";
+import { Sidebardata } from "../../../data/sidebardata";
+import { ContainerBar, ContainerHeader, ContainerLi } from "./sidebar.style";
+
 const Sidebar = () => {
   return (
     <>
       <ContainerBar>
-        <div>
-          <GiHamburgerMenu />
-        </div>
         {Sidebardata.map((val, key) => {
           return (
-            <ContainerHeader>
-              <ContainerLogo
-                key={key}
+            <ContainerHeader key={key}>
+              <ContainerLi
                 id={window.location.pathname === val.link ? "active" : ""}
                 onClick={() => {
                   window.location.pathname = val.link;
@@ -25,7 +21,7 @@ const Sidebar = () => {
                 <div id="title">
                   <h2>{val.title}</h2>
                 </div>
-              </ContainerLogo>
+              </ContainerLi>
             </ContainerHeader>
           );
         })}

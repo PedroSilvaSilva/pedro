@@ -1,23 +1,34 @@
-import styled from "styled-components";
-
-import theme from "_theme/theme";
+import styled, { css } from "styled-components";
 
 const ButtonContainer = styled.button`
-  background-color: ${(props) => props.theme.colors.primary};
-  color: ${(props) => props.theme.colors.background};
-  padding: 0.75rem 2rem;
-  font-size: ${(props) => props.theme.fontSizes.medium};
-  border: none;
-  border-radius: 5px;
+  width: 150px;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 14px;
   cursor: pointer;
-
-  &::placeholder {
-    color: ${theme.colors.primary};
-  }
-
   &:hover {
-    background-color: ${(props) => props.theme.colors.dark};
+    background-color: #1d555e;
   }
+  ${(props) =>
+    props.size === "small" &&
+    css`
+      padding: 8px 16px;
+      font-size: 14px;
+    `}
+  ${(props) =>
+    props.size === "moresmall" &&
+    css`
+      width: 70px;
+      padding: 6px 10px;
+      font-size: 14px;
+    `}
+
+  ${(props) =>
+    props.color &&
+    css`
+      background-color: ${props.color};
+      color: #ffffff;
+    `}
 `;
 
 export { ButtonContainer };

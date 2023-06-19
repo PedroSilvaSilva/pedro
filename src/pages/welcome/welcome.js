@@ -7,7 +7,7 @@ import logo from "_assets/images/logo.png";
 
 import { user } from "_data/datauser";
 
-import { Container } from "./welcome.style";
+import { Container } from "_pages/welcome/welcome.style";
 
 const Welcome = () => {
   const navigate = useNavigate();

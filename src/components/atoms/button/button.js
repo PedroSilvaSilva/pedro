@@ -1,9 +1,12 @@
-import { ButtonContainer } from "./button.style";
+import React from "react";
+import { ButtonContainer } from "../button/button.style";
 
-const Button = (props) => {
-  const { children, ...extraProps } = props;
-
-  return <ButtonContainer {...extraProps}>{children}</ButtonContainer>;
+const Button = ({ children, size, color, ...rest }) => {
+  return (
+    <ButtonContainer size={size} color={color} {...rest}>
+      {children}
+    </ButtonContainer>
+  );
 };
 
 export default Button;

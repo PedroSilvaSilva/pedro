@@ -1,16 +1,27 @@
 import React from "react";
 
-import { task } from "_data/datatask";
+import TaskConfig from "../../firebase/tasks/task.firebase";
+import Footer from "_components/molecules/footer/footer";
+import { Sidebar } from "_components/molecules";
+import {
+  ContairnerGeral,
+  Container,
+  ContainerMobile,
+} from "../../pages/task/task.style";
 
 const Task = () => {
   return (
-    <section>
-      <article>
-        {task.map((val, key) => {
-          return <div>{val.creator}</div>;
-        })}
-      </article>
-    </section>
+    <>
+      <ContairnerGeral>
+        <ContainerMobile>
+          <Sidebar />
+        </ContainerMobile>
+        <Container>
+          <TaskConfig />
+        </Container>
+      </ContairnerGeral>
+      <Footer />
+    </>
   );
 };
 

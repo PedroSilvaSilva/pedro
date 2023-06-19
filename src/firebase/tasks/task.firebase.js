@@ -9,6 +9,11 @@ import {
   doc,
   deleteDoc,
 } from "firebase/firestore";
+import Toolbar from "_components/molecules/toolbar/tolbar";
+import Button from "_components/atoms/button/button";
+import InputContainer from "_components/atoms/input/input";
+import { CardContainer } from "_components/molecules/footer/cards/card.style";
+
 import {
   ConatinerBio,
   ConatinerMobile,
@@ -18,7 +23,6 @@ import {
   ToolbarWrapper,
   ToolbarButton,
   Title,
-  Input,
   ContainerCard,
   ContainerMenu,
   Modal,
@@ -27,15 +31,11 @@ import {
   ModalTitle,
   ModalCloseButton,
   ModalBody,
-  Input2,
   PaginationWrapper,
   PaginationButton,
   Description3,
 } from "./task.style";
 import { GoArrowRight } from "react-icons/go";
-import Toolbar from "_components/molecules/toolbar/tolbar";
-import Button from "_components/atoms/button/button";
-import { CardContainer } from "_firebase/cards/card.style";
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyA1i2tFg43acxCVK9X3fFFVM042qPRDVnw",
@@ -183,7 +183,7 @@ const TaskConfig = () => {
       </ContainerMenu>
 
       <ToolbarWrapper>
-        <Input2
+        <InputContainer
           type="text"
           placeholder="Search..."
           value={searchValue}
@@ -266,7 +266,7 @@ const TaskConfig = () => {
                 height="450px"
               >
                 <Title>Task Name</Title>
-                <Input
+                <InputContainer
                   type="text"
                   value={editingTask.taskname}
                   onChange={(e) =>
@@ -279,7 +279,7 @@ const TaskConfig = () => {
 
                 <Title>Priority</Title>
                 <FormSelect>
-                  <Input
+                  <InputContainer
                     type="text"
                     value={editingTask.taskpriority}
                     onChange={(e) =>
@@ -296,7 +296,7 @@ const TaskConfig = () => {
                 </FormSelect>
                 <Title>Status</Title>
                 <FormSelect>
-                  <Input
+                  <InputContainer
                     type="text"
                     value={editingTask.taskpriority}
                     onChange={(e) =>

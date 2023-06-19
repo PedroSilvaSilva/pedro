@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { initializeApp } from "firebase/app";
 import { getFirestore, getDocs, collection, addDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
@@ -8,9 +9,8 @@ import {
   FormLabel,
   FormWrapper,
 } from "../addtask/addtask.style";
-import { Button } from "_components/atoms";
-import { useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
+import { Button } from "_components/atoms";
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyA1i2tFg43acxCVK9X3fFFVM042qPRDVnw",

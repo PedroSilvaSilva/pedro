@@ -1,25 +1,24 @@
 import styled, { css } from "styled-components";
 
 const InputContainer = styled.input`
-  width: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  padding: 10px 20px;
-  font-size: 14px;
-  cursor: pointer;
-  &:hover {
-    background-color: #1d555e;
-  }
+  font-size: 16px;
+  width: 100%;
+
   ${(props) =>
     props.size === "small" &&
     css`
-      padding: 8px 16px;
+      width: 50%;
+      padding: 10px 16px;
       font-size: 14px;
     `}
   ${(props) =>
     props.size === "moresmall" &&
     css`
-      width: 70px;
-      padding: 6px 10px;
+      width: 33.33%;
+      padding: 7px 16px;
       font-size: 14px;
     `}
   ${(props) =>

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const CardContainer = styled.article`
   background: ${(props) => props.backgroundColor || "#fcf6ee"};
@@ -14,7 +14,7 @@ const CardContainer = styled.article`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 1578px) {
+  @media (max-width: 1500px) {
     width: 350px;
     height: 150px;
     flex-direction: column;

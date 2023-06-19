@@ -1,5 +1,5 @@
 import React from "react";
-import { Description, Title, CardContainer } from "../cards/card.style";
+import { Description, Title, CardContainer } from "./card.style";
 
 const Card = ({ width, height, title, description }) => {
   return (
